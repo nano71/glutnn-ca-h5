@@ -1,0 +1,269 @@
+@import "../styles/theme";
+
+#topBar .search {
+  height: 36px;
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 0;
+
+  .input {
+    transition: .5s;
+    max-width: 100%;
+    height: 100%;
+    background-color: @F678;
+    width: 100%;
+    position: relative;
+    z-index: 12;
+
+    label {
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+
+    .icon {
+      padding: 0 8px;
+      width: 14px;
+      object-fit: cover;
+    }
+
+    input {
+      flex: 1;
+      border: 0;
+      outline: 0;
+      background-color: unset;
+      caret-color: white;
+      color: #ffffff;
+      font-size: 17px;
+      transition: .5s;
+    }
+  }
+
+  .cancel {
+    right: 0;
+    position: absolute;
+    font-size: 17px;
+    padding: 0 8px;
+    text-align: center;
+    white-space: nowrap;
+    color: rgb(41, 151, 255);
+  }
+
+}
+
+#topBar .menuList.searchMode .input {
+  max-width: calc(100vw - 20px - 58px);
+}
+
+#topBar {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 10;
+  height: 48px;
+
+  hr {
+    margin-bottom: 0;
+    margin-top: 16px;
+    border-top: 1px #eee solid;
+    border-bottom: 0;
+  }
+
+  .searchList {
+    position: absolute;
+    width: calc(100% - 80px);
+    transform: translateY(-80px) !important;
+    opacity: 0 !important;
+    visibility: hidden;
+
+    .tag {
+      color: rgb(134, 134, 139);
+      font-size: 12px;
+    }
+  }
+}
+
+
+#topBar > .top {
+  //background: rgba(255, 255, 255, 0.8);
+  //-webkit-backdrop-filter: saturate(180%) blur(20px);
+  //backdrop-filter: saturate(180%) blur(20px);
+  background-color: #fff;
+  border-bottom: 1px solid #f1f1f1;
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  z-index: 11;
+  width: calc(100vw - 20px);
+  padding: 0 10px;
+
+  .logo, .left, .menu {
+    height: 48px;
+    width: 48px;
+    //opacity: .8;
+    //opacity: 1;
+  }
+
+  .logo {
+    background-size: 17px 48px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(https://www.apple.com.cn/ac/globalnav/7/zh_CN/images/be15095f-5a20-57d0-ad14-cf4c638e223a/globalnav_apple_image__b5er5ngrzxqq_small.svg);
+  }
+
+  .menu {
+    width: 80px;
+    border-radius: 20px;
+    margin: 5px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    i {
+      line-height: 30px;
+      height: 30px;
+      width: 30px;
+      font-size: 17px;
+    }
+
+    .lineBox {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+
+      .line:first-child {
+        background-color: black;
+        width: 17px;
+        height: 1.5px;
+        border-radius: 0.5px;
+        transform: translateY(2px);
+        transition: .5s;
+      }
+
+      .line {
+        background-color: black;
+        width: 17px;
+        height: 1.5px;
+        border-radius: 0.5px;
+        transform: translateY(0);
+        transition: .5s;
+      }
+
+      .line:nth-child(2) {
+        width: 10px;
+        transform: translateX(2.5px) !important;
+      }
+
+      .line:last-child {
+        transform: translateY(-2px);
+      }
+    }
+
+  }
+}
+
+#topBar > .menuList {
+  max-height: 0;
+  width: 100vw;
+  height: calc(100vh - 48px);
+  padding-top: 48px;
+  background-color: white;
+  transition: .5s;
+  visibility: hidden;
+  overflow: hidden;
+  position: absolute;
+
+  .list {
+    margin-top: 16px;
+    color: rgb(245, 245, 247);
+    padding: 4px 40px;
+
+    > .item {
+      opacity: 0.8;
+      height: 44px;
+      line-height: 44px;
+      color: #444;
+      border-bottom: 1px #eee solid;
+    }
+
+    > .item:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  > * {
+    transition: .5s;
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+
+}
+
+
+#topBar > .top.searchMode {
+  transform: translateY(-100%);
+}
+
+#topBar > .menuList.searchMode {
+  transform: translateY(-32px);
+  height: 100vh;
+
+  .search {
+    z-index: 12;
+  }
+
+  .list {
+    transform: translateY(80px);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .searchList {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+    z-index: 11;
+    visibility: visible;
+  }
+}
+
+#topBar.show {
+  .top {
+    border-bottom: 0;
+  }
+
+  .menuList {
+    max-height: 100vh;
+    visibility: visible;
+
+    > * {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .menu {
+    .line:first-child {
+      transform: translate(.5px, 4.5px) rotate(45deg) !important;
+      transform-origin: 4px 1px;
+      opacity: 1;
+    }
+
+    .line {
+      opacity: 0;
+      transform: translateX(0);
+    }
+
+    .line:last-child {
+      transform: translate(-.5px, -7.5px) rotate(-45deg) !important;
+      opacity: 1;
+    }
+  }
+}
