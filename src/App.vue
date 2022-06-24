@@ -1,12 +1,10 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
 import TopBar from "./components/topBar.vue";
+const text = "tbb"
 </script>
 
 <template>
   <top-bar/>
-  <img alt="Vue logo" src="./assets/logo.png"/>
-  <HelloWorld msg="Hello Vue 3 + Vite"/>
   <iframe src="https://staging-cn.vuejs.org"></iframe>
 </template>
 
