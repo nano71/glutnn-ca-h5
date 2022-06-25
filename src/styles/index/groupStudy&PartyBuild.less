@@ -1,0 +1,65 @@
+@import url(../theme.less);
+
+.areaTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .left {
+    line-height: 1;
+
+    .small {
+      font-size: 18px;
+    }
+
+    .text {
+      font-size: 27px;
+      font-weight: 400;
+      margin: 0;
+    }
+  }
+
+  .more {
+    font-size: 12px;
+    color: @COLOR;
+    display: flex;
+    align-items: center;
+  }
+
+}
+
+#panel {
+  margin: 20px;
+  padding-top: 40px;
+
+  .card {
+    margin-top: 20px;
+    background-color: #F2F3F9;
+    padding: 10px;
+
+    .title {
+      color: #666666;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .list {
+      .item {
+        border-bottom: 1px solid white;
+        padding: 10px;
+
+        .time {
+          margin-top: 5px;
+          color: @COLOR;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+      }
+
+      .item:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+}

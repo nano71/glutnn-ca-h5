@@ -11,6 +11,7 @@
         slides-per-view="auto"
         centered-slides
         draggable
+        :loop="false"
     >
       <n-carousel-item class="item" v-for="(url,index) in majors.images">
         <div class="type">本科 - 学制四年</div>

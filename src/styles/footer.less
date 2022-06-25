@@ -1,0 +1,109 @@
+@import url(./theme);
+
+footer#footer {
+  position: relative;
+  //background-color: @F678;
+  padding: 40px 20px 20px;
+  background-image: linear-gradient(19deg, #214dfd 0%, #8521ff 100%);
+  color: #ffffff;
+  z-index: 12;
+
+  img.logo {
+    width: 200px;
+  }
+
+  img.text {
+    margin-top: 10px;
+    width: 150px;
+  }
+
+  .menuList {
+    margin-top: 30px;
+    font-size: 14px;
+
+    > .item {
+      max-height: 48px;
+      transition: .5s;
+      overflow: hidden;
+      background-color: #ffffff20;
+      margin: 10px 0;
+      padding: 0 10px;
+
+      .menuTitle {
+        display: flex;
+        align-items: center;
+        height: 48px;
+        justify-content: space-between;
+        //background-color: @F678;
+        position: relative;
+        z-index: 1;
+      }
+
+      .menuTitle:after {
+        content: '+';
+        float: right;
+        font-size: 14px;
+        font-weight: normal;
+        margin-top: -2px;
+        margin-right: 8px;
+        transform: scale(1.5);
+        transition: .5s;
+      }
+
+      .list {
+        padding: 5px 12px;
+        transition: .5s;
+        //transform: translateY(-80px);
+        opacity: 0;
+
+        .qrcodeBox {
+          display: flex;
+          align-items: center;
+          margin: 6px 0 16px;
+
+          .text {
+            margin-left: 20px;
+            color: #ffffff80;
+          }
+        }
+
+        img.qrcode {
+          border: 5px solid white;
+          width: 50%;
+          background-color: #fff;
+        }
+
+        a.item {
+          display: block;
+          padding: 6px 0 16px;
+          color: white;
+          font-size: 12px;
+          text-decoration: unset;
+        }
+      }
+    }
+
+    > .item.active {
+      max-height: 100vh;
+
+      .menuTitle:after {
+        transform: rotate(45deg) scale(2);
+        color: white;
+      }
+
+      .list {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  .siteInfo {
+    padding-top: 20px;
+    color: #FFFFFF80;
+
+    .copyright {
+      font-size: 12px;
+    }
+  }
+}

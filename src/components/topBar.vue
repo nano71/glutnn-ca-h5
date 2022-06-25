@@ -5,6 +5,7 @@ export default {
     return {
       show: false,
       searchMode: false,
+      bottomMode: false,
       topMode: true,
       searchList: {
         names: ["图书资源", "国际交流", "继续教育", "人才招聘"],
@@ -20,16 +21,23 @@ export default {
     window.addEventListener("scroll", this.onScroll)
   },
   methods: {
+    isContain(element) {
+      const totalHeight = window.innerHeight || document.documentElement.clientHeight;
+      const totalWidth = window.innerWidth || document.documentElement.clientWidth;
+      const {top, right, bottom, left} = element.getBoundingClientRect();
+      return (top >= 0 && left >= 0 && right <= totalWidth && bottom <= totalHeight);
+    },
     onScroll() {
       let scrollTop = document.documentElement.scrollTop || document.body.scrollTop
       this.topMode !== scrollTop < 240 && (this.topMode = scrollTop < 240)
+
     }
   }
 }
 </script>
 
 <template>
-  <div id="topBar" :class="show&&'show'">
+  <div id="topBar" v-show="!bottomMode" :class="show&&'show'">
     <div :class="{top:true,searchMode,topMode}">
       <div class="logo">
         <img class="lineMode" src="../images/logo-line.png" alt="">
@@ -66,7 +74,7 @@ export default {
       <div class="list">
         <div class="item" v-for="item in linkList.names">{{ item }}</div>
       </div>
-<!--      <img src="../images/logo-2.png" alt="" class="bigLogo">-->
+      <!--      <img src="../images/logo-2.png" alt="" class="bigLogo">-->
     </div>
   </div>
   <!--  <div class="placeholder-48"></div>-->

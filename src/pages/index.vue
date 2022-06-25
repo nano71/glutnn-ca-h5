@@ -6,6 +6,8 @@
     <news/>
     <notice/>
     <major/>
+    <group-study-party-build/>
+    <Footer/>
   </div>
 </template>
 <script>
@@ -24,11 +26,13 @@ export default {
 </script>
 <script setup>
 import TopBar from "../components/topBar.vue";
+import Footer from "../components/footer.vue";
 import Carousel from "../components/index/carousel.vue";
 import News from "../components/index/news.vue";
 import Notice from "../components/index/notice&publicity.vue";
 import Welcome from "../components/index/welcome.vue";
 import Major from "../components/index/major.vue";
+import GroupStudyPartyBuild from "../components/index/groupStudy&PartyBuild.vue";
 </script>
 
 <style scoped>
