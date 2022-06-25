@@ -1,0 +1,109 @@
+@import url(../theme);
+
+.areaTitle {
+  height: 0;
+  width: 100px;
+  border-bottom: 44px solid @COLOR;
+  border-right: 37px solid transparent;
+  position: absolute;
+  top: -32px;
+  color: #ffffff;
+  line-height: 44px;
+  font-size: 16px;
+  text-align: center;
+}
+
+#news {
+  border-top: 5px solid;
+  border-image: linear-gradient(to right, #a271ee, @COLOR) 1;
+  position: relative;
+  width: 100vw;
+  height: 400px;
+  padding-top: 20px;
+
+  .content {
+    margin: 0 20px;
+    width: calc(100vw - 40px);
+
+    .item {
+      img {
+        width: 100%;
+        height: 200px;
+      }
+
+      .tag {
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        color: @COLOR;
+        font-size: 12px;
+        align-items: center;
+
+      }
+
+      .tag:after {
+        content: "";
+        width: 17px;
+        height: 1px;
+        margin-left: 17px;
+        background-color: @COLOR;
+      }
+
+      .tag:before {
+        content: "";
+        width: 17px;
+        height: 1px;
+        margin-right: 17px;
+        background-color: @COLOR;
+      }
+
+      .title {
+        color: #666;
+        font-size: 16px;
+        line-height: 25px;
+      }
+    }
+  }
+}
+
+.custom-dots, .count {
+  display: flex;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  justify-content: center;
+  width: 100%;
+}
+
+.count {
+  height: 30px;
+  bottom: 30px;
+  color: #999;
+  align-items: center;
+
+  .line {
+    margin: 0 10px;
+    width: 1px;
+    height: 16px;
+    background-color: @BORDER;
+  }
+
+  .more {
+    color: @COLOR;
+  }
+}
+
+.custom-dots div {
+  width: 20px;
+  height: 4px;
+  margin: 0 3px;
+  border-radius: 4px;
+  background-color: @BORDER;
+  transition: width 0.3s, background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.custom-dots div.is-active {
+  width: 40px;
+  background: @COLOR;
+}

@@ -9,10 +9,14 @@
   },
   "dependencies": {
     "remixicon": "^2.5.0",
-    "vue": "^3.2.25"
+    "vue": "^3.2.25",
+    "vue-router": "^4.0.16"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.3",
+    "naive-ui": "^2.30.6",
+    "unplugin-vue-components": "^0.19.9",
+    "vfonts": "^0.0.3",
     "vite": "^2.9.9"
   }
 }

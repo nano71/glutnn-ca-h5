@@ -1,9 +1,11 @@
 <script>
 export default {
+  props: ["mode"],
   data() {
     return {
       show: false,
       searchMode: false,
+      topMode: true,
       searchList: {
         names: ["图书资源", "国际交流", "继续教育", "人才招聘"],
         paths: []
@@ -13,15 +15,26 @@ export default {
       },
       host: "glutnn.cn"
     }
+  },
+  created() {
+    window.addEventListener("scroll", this.onScroll)
+  },
+  methods: {
+    onScroll() {
+      let scrollTop = document.documentElement.scrollTop || document.body.scrollTop
+      this.topMode !== scrollTop < 240 && (this.topMode = scrollTop < 240)
+    }
   }
 }
 </script>
 
 <template>
   <div id="topBar" :class="show&&'show'">
-    <div :class="{top:true,searchMode}">
+    <div :class="{top:true,searchMode,topMode}">
       <div class="logo">
-        <img src="../images/logo.png" alt="">
+        <img class="lineMode" src="../images/logo-line.png" alt="">
+        <img class="blackMode" src="../images/logo-black.png" alt="">
+        <img class="whiteMode" src="../images/logo-white.png" alt="">
       </div>
       <div class="menu">
         <i class="ri-search-line" @click="!show&&(show=!show,searchMode=true)"></i>
@@ -33,6 +46,7 @@ export default {
       </div>
     </div>
     <div :class="{menuList:true,searchMode}">
+      <div class="placeholder-48"/>
       <div class="search">
         <div class="input">
           <label for="searchInput">
@@ -52,9 +66,10 @@ export default {
       <div class="list">
         <div class="item" v-for="item in linkList.names">{{ item }}</div>
       </div>
+<!--      <img src="../images/logo-2.png" alt="" class="bigLogo">-->
     </div>
   </div>
-  <div class="placeholder-48"></div>
+  <!--  <div class="placeholder-48"></div>-->
 </template>
 
 <style scoped lang="less">

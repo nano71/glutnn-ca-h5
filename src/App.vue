@@ -1,11 +1,7 @@
-<script setup>
-import TopBar from "./components/topBar.vue";
-const text = "tbb"
-</script>
-
 <template>
-  <top-bar/>
-  <iframe src="https://staging-cn.vuejs.org"></iframe>
+  <keep-alive>
+    <router-view></router-view>
+  </keep-alive>
 </template>
 
 <style lang="less">
@@ -18,5 +14,4 @@ iframe {
   height: 10000vh;
   width: 100vw;
 }
-
 </style>
