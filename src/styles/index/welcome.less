@@ -22,12 +22,16 @@
     top: 50%;
     left: 50%;
     z-index: 73;
+    opacity: 0;
+    transition: .2s;
+  }
 
+  img.show {
+    opacity: 1;
   }
 
   img.logo {
     width: 250px;
-
     transform: translate(-50%, -100%);
   }
 
@@ -66,6 +70,10 @@
 
 #welcome.end {
   visibility: hidden;
+
+  img {
+    display: none;
+  }
 
   .box {
     span {

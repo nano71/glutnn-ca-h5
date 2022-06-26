@@ -1,5 +1,5 @@
 <template>
-  <welcome :class="{end}"/>
+  <welcome/>
   <div id="index">
     <top-bar @touchmove.stop.prevent="1"/>
     <carousel/>
@@ -12,20 +12,6 @@
     <Footer/>
   </div>
 </template>
-<script>
-export default {
-  data() {
-    return {
-      end: false
-    }
-  },
-  mounted() {
-    setTimeout(() => {
-      this.end = true
-    }, 1000)
-  }
-}
-</script>
 <script setup>
 import TopBar from "../components/topBar.vue";
 import Footer from "../components/footer.vue";
@@ -38,7 +24,13 @@ import GroupStudyPartyBuild from "../components/index/groupStudy&PartyBuild.vue"
 import Service from "../components/index/service.vue";
 import Topic from "../components/index/topic.vue";
 </script>
-
 <style scoped>
+#index {
+  opacity: 0;
+  transition: .5s;
+}
 
+#welcome.end + #index {
+  opacity: 1;
+}
 </style>

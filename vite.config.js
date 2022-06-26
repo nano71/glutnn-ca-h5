@@ -13,5 +13,8 @@ export default defineConfig({
             resolvers: [NaiveUiResolver()]
         })
     ],
-    base: "./"
+    base: "./",
+    build: {
+        cssCodeSplit: false
+    }
 })
