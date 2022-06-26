@@ -7,6 +7,8 @@
     <notice/>
     <major/>
     <group-study-party-build/>
+    <service/>
+    <topic/>
     <Footer/>
   </div>
 </template>
@@ -33,6 +35,8 @@ import Notice from "../components/index/notice&publicity.vue";
 import Welcome from "../components/index/welcome.vue";
 import Major from "../components/index/major.vue";
 import GroupStudyPartyBuild from "../components/index/groupStudy&PartyBuild.vue";
+import Service from "../components/index/service.vue";
+import Topic from "../components/index/topic.vue";
 </script>
 
 <style scoped>

@@ -25,7 +25,7 @@ footer#footer {
       max-height: 48px;
       transition: .5s;
       overflow: hidden;
-      background-color: #ffffff20;
+      background-color: rgba(255, 255, 255, .2);
       margin: 10px 0;
       padding: 0 10px;
 
@@ -37,18 +37,20 @@ footer#footer {
         //background-color: @F678;
         position: relative;
         z-index: 1;
+
+        i {
+          transition: .2s;
+          font-size: 18px;
+          position: absolute;
+          right: 0;
+          opacity: 0;
+        }
+
+        i:first-child {
+          opacity: 1;
+        }
       }
 
-      .menuTitle:after {
-        content: '+';
-        float: right;
-        font-size: 14px;
-        font-weight: normal;
-        margin-top: -2px;
-        margin-right: 8px;
-        transform: scale(1.5);
-        transition: .5s;
-      }
 
       .list {
         padding: 5px 12px;
@@ -63,7 +65,7 @@ footer#footer {
 
           .text {
             margin-left: 20px;
-            color: #ffffff80;
+            color: rgba(255, 255, 255, 0.5);
           }
         }
 
@@ -86,9 +88,12 @@ footer#footer {
     > .item.active {
       max-height: 100vh;
 
-      .menuTitle:after {
-        transform: rotate(45deg) scale(2);
-        color: white;
+      i:first-child {
+        opacity: 0;
+      }
+
+      i:last-child {
+        opacity: 1;
       }
 
       .list {
@@ -100,7 +105,7 @@ footer#footer {
 
   .siteInfo {
     padding-top: 20px;
-    color: #FFFFFF80;
+    color: rgba(255, 255, 255, 0.5);
 
     .copyright {
       font-size: 12px;

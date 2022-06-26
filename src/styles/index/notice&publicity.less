@@ -29,12 +29,18 @@
   position: relative;
 
   img.background {
-    width: 100px;
+    width: 50px;
     position: absolute;
     opacity: .1;
-    top: 150px;
+    top: 110px;
     left: 50%;
     transform: translateX(-50%);
+  }
+
+  img.background:last-child {
+    transform: translateX(-50%);
+    width: 100px;
+    top: 200px;
   }
 }
 

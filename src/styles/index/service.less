@@ -1,0 +1,75 @@
+@import url(../theme);
+
+.areaTitle {
+  position: relative;
+  //background-color: @COLOR;
+  text-align: center;
+  line-height: 1;
+
+  .small {
+    font-size: 16px;
+    margin-top: 20px;
+    //color: @COLOR;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .text {
+    color: #ffffff;
+    font-size: 27px;
+  }
+}
+
+#service {
+  position: relative;
+  margin-top: 40px;
+  padding: 40px 20px;
+
+  img.back {
+    //filter: blur(1px);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+  }
+
+  .filter {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    background-color: #523fff;
+    opacity: .9;
+  }
+
+  .content {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    justify-content: space-between;
+
+    .item {
+      background-color: rgba(255, 255, 255, 0.13);
+      padding: 10px;
+      flex: 100%;
+      display: flex;
+      align-items: center;
+      color: #ffffff;
+      position: relative;
+
+      img.icon {
+        margin-right: 20px;
+        width: 44px;
+      }
+
+      i {
+        //color: @COLOR;
+        //color: white;
+        position: absolute;
+        right: 10px;
+      }
+    }
+  }
+}

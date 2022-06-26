@@ -39,7 +39,8 @@
         </div>
       </div>
     </div>
-    <img src="../../images/logo-3.png" alt="" class="background">
+    <img src="../../images/logo-2.png" alt="" class="background">
+    <img src="../../images/welcome.png" alt="" class="background">
   </div>
 
 </template>

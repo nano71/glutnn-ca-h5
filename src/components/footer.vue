@@ -7,6 +7,8 @@
            v-for="(item,index) in footerMenuList">
         <div class="menuTitle" @click="item.active = !item.active">
           {{ item.name }}
+          <i class="ri-add-line"></i>
+          <i class="ri-subtract-line"></i>
         </div>
         <div class="list">
           <div class="qrcodeBox" v-if="index===0">
@@ -33,7 +35,7 @@
       <div class="copyright">
         桂ICP备2021003184号-2
         <br>
-        Copyright © 1998 - 2022 Tencent. All Rights Reserved.
+        Copyright © 2021 - 2022 nano71. All Rights Reserved.
         <br>
         nano71 dev team 版权所有
       </div>
