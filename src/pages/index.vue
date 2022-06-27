@@ -29,7 +29,7 @@ import Topic from "../components/index/topic.vue";
 </script>
 <style scoped>
 #index {
-  opacity: 0;
+  /*opacity: 0;*/
   transition: .5s;
 }
 
