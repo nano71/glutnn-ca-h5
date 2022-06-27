@@ -2,15 +2,35 @@
 
 .areaTitle {
   height: 0;
-  width: 100px;
-  border-bottom: 44px solid @COLOR;
-  border-right: 37px solid transparent;
+  width: 120px;
+  border-bottom: 44px solid #646CFF;
+  border-right: 25px solid transparent;
   position: absolute;
   top: -32px;
+  left: 10px;
   color: #ffffff;
-  line-height: 44px;
+  padding: 0 10px;
   font-size: 16px;
-  text-align: center;
+
+  .box {
+    position: absolute;
+    height: 44px;
+    top: 0;
+    display: flex;
+    width: 120px;
+    align-items: center;
+
+    > * {
+      line-height: 1;
+    }
+
+    .small {
+      font-size: 14px;
+      opacity: 0.1;
+      transform: scale(3);
+    }
+  }
+
 }
 
 #news {
@@ -58,8 +78,8 @@
       }
 
       .title {
-        color: #666;
-        font-size: 16px;
+        //color: #666;
+        font-size: 18px;
         line-height: 25px;
       }
     }

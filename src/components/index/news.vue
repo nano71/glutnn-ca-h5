@@ -1,7 +1,11 @@
 <template>
   <div id="news">
     <div class="areaTitle">
-      新闻公告
+      <div class="box">
+        <span class="text">新闻公告</span>
+        <span class="small">NEWS</span>
+      </div>
+
     </div>
     <n-carousel class="content" autoplay draggable>
       <n-carousel-item class="item" v-for="(url,index) in newsList.images">

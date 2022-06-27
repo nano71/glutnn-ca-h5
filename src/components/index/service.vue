@@ -14,9 +14,9 @@
     </div>
     <div class="content">
       <div class="item" v-for="(url,index) in list.icons">
-        <img :src="url" alt="" class="icon">
+        <img :src="url" alt="">
         {{ list.names[index] }}
-        <i class="ri-arrow-right-s-line"></i>
+        <ri-arrow-right-s-line class="icon"/>
       </div>
     </div>
   </div>

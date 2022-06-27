@@ -6,7 +6,8 @@
         <div class="text">团学与党建</div>
       </div>
       <div class="more">
-        更多内容<i class="ri-arrow-right-s-line"></i>
+        更多内容
+        <ri-arrow-right-s-line class="icon"/>
       </div>
     </div>
     <div class="card">

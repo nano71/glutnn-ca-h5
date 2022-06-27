@@ -39,8 +39,8 @@
         </div>
       </div>
     </div>
-    <img src="../../images/logo-2.png" alt="" class="background">
-    <img src="../../images/welcome.png" alt="" class="background">
+    <img src="https://nano71.com/img/glutnn/logo-2.png" alt="" class="background">
+    <img src="https://nano71.com/img/glutnn/welcome.png" alt="" class="background">
   </div>
 
 </template>

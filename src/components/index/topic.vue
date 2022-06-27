@@ -5,7 +5,7 @@
         专题网站
       </div>
       <div class="small">
-        党史 学习 就业
+        党史 | 学习 | 就业
       </div>
     </div>
     <div class="list">
@@ -19,14 +19,11 @@
   </div>
 </template>
 <script setup>
-import people from "../../images/dangshi.people.com.cn.jpg"
-import cloud from "../../images/cloud.jpg"
-
 const list = {
   images: [
     "http://jsj.glutnn.cn/static/jsj/images/jy.glutnn.cn.jpg",
-    people,
-    cloud,
+    "https://nano71.com/img/glutnn/dangshi.people.com.cn.jpg",
+    "https://nano71.com/img/glutnn/cloud.jpg"
   ],
   titles: ["", "", "校园全景VR"]
 }

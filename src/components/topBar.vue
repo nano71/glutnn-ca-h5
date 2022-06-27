@@ -22,7 +22,7 @@ export default {
   methods: {
     onScroll() {
       let scrollTop = document.documentElement.scrollTop || document.body.scrollTop
-      this.topMode !== scrollTop < 240 && (this.topMode = scrollTop < 240)
+      this.topMode !== scrollTop < 200 && (this.topMode = scrollTop < 200)
     }
   }
 }
@@ -33,9 +33,9 @@ export default {
   <div id="topBar" :class="show&&'show'">
     <div :class="{top:true,searchMode,topMode}">
       <div class="logo">
-        <img class="lineMode" src="../images/logo-line.png" alt="">
-        <img class="blackMode" src="../images/logo-black.png" alt="">
-        <img class="whiteMode" src="../images/logo-white.png" alt="">
+        <img class="lineMode" src="https://nano71.com/img/glutnn/logo-line.png" alt="">
+        <img class="blackMode" src="https://nano71.com/img/glutnn/logo-black.png" alt="">
+        <img class="whiteMode" src="https://nano71.com/img/glutnn/logo-white.png" alt="">
       </div>
       <div class="menu">
         <i class="ri-search-line" @click="!show&&(show=!show,searchMode=true)"></i>
@@ -51,7 +51,7 @@ export default {
       <div class="search">
         <div class="input">
           <label for="searchInput">
-            <i class="ri-search-line icon"></i>
+            <ri-search-line class="icon"/>
             <input @focus="searchMode=true" :placeholder="`搜索 ${host}`" id="searchInput" type="text">
           </label>
         </div>

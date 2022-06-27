@@ -5,10 +5,8 @@
       <span class="middle"></span>
       <span class="bottom"></span>
     </div>
-    <!--    <div class="text" v-html="html">-->
-    <!--    </div>-->
-    <img :class="{logo:true,show:shows[0]}" src="../../images/logo-black.png" @load="start(0)" alt="">
-    <img :class="{welcome:true,show:shows[1]}" src="../../images/welcome.png" @load="start(1)" alt="">
+    <img :class="{logo:true,show:shows[0]}" src="https://nano71.com/img/glutnn/logo-black.png" @load="start(0)" alt="">
+    <img :class="{welcome:true,show:shows[1]}" src="https://nano71.com/img/glutnn/welcome.png" @load="start(1)" alt="">
   </div>
 </template>
 <script>

@@ -1,18 +1,18 @@
 <template>
   <footer id="footer">
-    <img src="../images/logo-white.png" alt="" class="logo">
-    <img src="../images/welcome-white.png" alt="" class="text">
+    <img src="https://nano71.com/img/glutnn/logo-white.png" alt="" class="logo">
+    <img src="https://nano71.com/img/glutnn/welcome-white.png" alt="" class="text">
     <div class="menuList">
       <div :class="{item:true,active:item.active}"
            v-for="(item,index) in footerMenuList">
         <div class="menuTitle" @click="item.active = !item.active">
           {{ item.name }}
-          <i class="ri-add-line"></i>
-          <i class="ri-subtract-line"></i>
+          <ri-add-line class="icon"/>
+          <ri-subtract-line class="icon"/>
         </div>
         <div class="list">
           <div class="qrcodeBox" v-if="index===0">
-            <img class="qrcode" src="../images/qrcode.png" alt="">
+            <img class="qrcode" src="https://nano71.com/img/glutnn/qrcode.png" alt="">
             <div class="text">
               欢迎关注
               <br>
@@ -20,7 +20,6 @@
               <br>
               微信公众号
             </div>
-
           </div>
           <a class="item" v-if=item.hasHref v-for="(item2,index2) in item.list" :href="item.href[index2]">
             {{ item2 }}

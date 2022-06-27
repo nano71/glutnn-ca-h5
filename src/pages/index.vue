@@ -1,14 +1,17 @@
 <template>
   <welcome/>
   <div id="index">
-    <top-bar @touchmove.stop.prevent="1"/>
+    <top-bar @touchmove="1"/>
     <carousel/>
-    <news/>
-    <notice/>
-    <major/>
-    <group-study-party-build/>
-    <service/>
-    <topic/>
+    <div class="placeholder-240"></div>
+    <div id="main">
+      <news/>
+      <notice/>
+      <major/>
+      <group-study-party-build/>
+      <service/>
+      <topic/>
+    </div>
     <Footer/>
   </div>
 </template>
@@ -28,6 +31,11 @@ import Topic from "../components/index/topic.vue";
 #index {
   opacity: 0;
   transition: .5s;
+}
+
+#main {
+  background-color: #fff;
+  position: relative;
 }
 
 #welcome.end + #index {

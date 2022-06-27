@@ -49,12 +49,27 @@
       .mainCourse {
         margin-top: 16px;
 
-
         .item {
-          border-left: 1px solid @COLOR;
+          position: relative;
           color: #999999;
           padding-left: 10px;
         }
+
+        .item:before {
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          content: "";
+          width: 4px;
+          height: 4px;
+          background-color: @COLOR;
+        }
+
+        .tag {
+          margin-bottom: 5px;
+        }
+
         .tag, .more {
           color: @COLOR;
           font-size: 12px;
@@ -62,7 +77,5 @@
 
       }
     }
-
-
   }
 }
