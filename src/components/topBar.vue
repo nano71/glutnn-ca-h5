@@ -13,7 +13,8 @@ export default {
       linkList: {
         names: ["系简介", "新闻/公告", "人才培养", "师资队伍", "党群工作", "招生就业", "服务指南", "学生竞赛", "学校校历"]
       },
-      host: "glutnn.cn"
+      host: "glutnn.cn",
+      zIndex: null
     }
   },
   created() {
@@ -23,6 +24,15 @@ export default {
     onScroll() {
       let scrollTop = document.documentElement.scrollTop || document.body.scrollTop
       this.topMode !== scrollTop < 200 && (this.topMode = scrollTop < 200)
+    },
+    action() {
+      this.show = !this.show
+      if (!this.show) {
+        this.zIndex = 13
+        setTimeout(() => {
+          this.zIndex = null
+        }, 500)
+      }
     }
   }
 }
@@ -30,7 +40,7 @@ export default {
 
 <template>
   <div class="mask"></div>
-  <div id="topBar" :class="show&&'show'">
+  <div id="topBar" :class="{show}" :style="`z-index: ${zIndex};`">
     <div :class="{top:true,searchMode,topMode}">
       <div class="logo">
         <img class="lineMode" src="https://nano71.com/img/glutnn/logo-line.png" alt="">
@@ -39,7 +49,7 @@ export default {
       </div>
       <div class="menu">
         <i class="ri-search-line" @click="!show&&(show=!show,searchMode=true)"></i>
-        <div class="lineBox" @click="show=!show">
+        <div class="lineBox" @click="action">
           <div class="line"></div>
           <div class="line"></div>
           <div class="line"></div>

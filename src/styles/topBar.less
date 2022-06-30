@@ -11,7 +11,7 @@
   hr {
     margin-bottom: 0;
     border-top: 1px @BORDER solid;
-    border-bottom: 0;
+    border-bottom-color: transparent;
   }
 
   .searchList {
@@ -207,11 +207,11 @@
     }
 
     > .item:last-child {
-      border-bottom: 0;
+      border-bottom-color: transparent;
     }
   }
 
-  > div {
+  > * {
     transition: .5s;
     transform: translateY(-20px);
     opacity: 0;
@@ -234,7 +234,7 @@
 
 #topBar > .top.topMode {
   background-color: transparent;
-  border-bottom: 0;
+  border-bottom-color: transparent;
 
   i {
     color: white;
@@ -253,7 +253,7 @@
   z-index: 13;
 
   .top {
-    border-bottom: 0;
+    border-bottom-color: transparent;
     background: white;
 
     .logo {
@@ -276,7 +276,7 @@
     max-height: calc(100vh + 48px);
     visibility: visible;
 
-    > div {
+    > * {
       transform: translateY(0);
       opacity: 1;
     }
