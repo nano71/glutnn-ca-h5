@@ -1,5 +1,5 @@
 <template>
-  <footer id="footer">
+  <div id="pageFooter">
     <img src="https://nano71.com/img/glutnn/logo-white.png" alt="" class="logo">
     <img src="https://nano71.com/img/glutnn/welcome-white.png" alt="" class="text">
     <div class="menuList">
@@ -39,12 +39,12 @@
         nano71 dev team 版权所有
       </div>
     </div>
-  </footer>
+  </div>
 </template>
 
 <script>
 export default {
-  name: "footer",
+  name: "pageFooter",
   data() {
     return {
       footerMenuList: [

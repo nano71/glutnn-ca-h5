@@ -6,11 +6,26 @@ import {
 
 import Index from "../pages/index.vue"
 import Error from "../pages/error.vue"
+import Article from "../pages/article.vue";
 
 const routes = [
     {
         path: "/",
         component: Index
+    },
+    {
+        path: "/article",
+        component: Article,
+        children: [
+            {
+                path: '',
+                redirect: '/404',
+            },
+            {
+                path: ":id",
+                component: Article,
+            },
+        ],
     },
     {
         path: '/404',

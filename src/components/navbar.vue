@@ -1,11 +1,10 @@
 <script>
 export default {
-  props: ["mode"],
   data() {
     return {
       show: false,
       searchMode: false,
-      topMode: true,
+      topMode: false,
       searchList: {
         names: ["图书资源", "国际交流", "继续教育", "人才招聘"],
         paths: []
@@ -18,12 +17,13 @@ export default {
     }
   },
   created() {
-    window.addEventListener("scroll", this.onScroll)
   },
   methods: {
     onScroll() {
-      let scrollTop = document.documentElement.scrollTop || document.body.scrollTop
-      this.topMode !== scrollTop < 200 && (this.topMode = scrollTop < 200)
+      if (this.$store.state.navbar.topMode) {
+        let scrollTop = document.documentElement.scrollTop || document.body.scrollTop
+        this.topMode !== scrollTop < 200 && (this.topMode = scrollTop < 200)
+      }
     },
     action() {
       this.show = !this.show
@@ -41,8 +41,8 @@ export default {
 <template>
   <div class="mask"></div>
   <div id="topBar" :class="{show}" :style="`z-index: ${zIndex};`">
-    <div :class="{top:true,searchMode,topMode}">
-      <div class="logo">
+    <div :class="{top:true,searchMode,topMode:$store.state.navbar.topMode}">
+      <div class="logo" @click="$router.push('/')">
         <img class="lineMode" src="https://nano71.com/img/glutnn/logo-line.png" alt="">
         <img class="blackMode" src="https://nano71.com/img/glutnn/logo-black.png" alt="">
         <img class="whiteMode" src="https://nano71.com/img/glutnn/logo-white.png" alt="">

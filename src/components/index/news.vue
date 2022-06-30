@@ -5,10 +5,9 @@
         <span class="text">新闻公告</span>
         <span class="small">NEWS</span>
       </div>
-
     </div>
     <n-carousel class="content" autoplay draggable>
-      <n-carousel-item class="item" v-for="(url,index) in newsList.images">
+      <n-carousel-item class="item" v-for="(url,index) in newsList.images" @click="$router.push('/article/1')">
         <img :src="url"
              alt="">
         <div class="tag">
