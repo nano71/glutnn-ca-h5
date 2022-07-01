@@ -12,7 +12,7 @@
   white-space: nowrap;
 }
 
-.placeholder-48{
+.placeholder-48 {
   bottom: 0;
   position: absolute;
   left: 0;
@@ -23,33 +23,35 @@
   background-size: auto 100%;
 }
 
-.carousel-img {
+.carouselImage {
   width: 100%;
   height: 240px;
   object-fit: cover;
 }
 
-.custom-dots {
+.customDots {
   display: flex;
   margin: 0;
   padding: 0;
   position: absolute;
   bottom: 14px;
   right: 20px;
+
+  div {
+    display: inline-block;
+    width: 12px;
+    height: 4px;
+    margin: 0 3px;
+    //border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.4);
+    transition: width 0.3s, background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+
+    &.active {
+      width: 40px;
+      background: #fff;
+    }
+  }
+
 }
 
-.custom-dots li {
-  display: inline-block;
-  width: 12px;
-  height: 4px;
-  margin: 0 3px;
-  //border-radius: 4px;
-  background-color: rgba(255, 255, 255, 0.4);
-  transition: width 0.3s, background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
-}
-
-.custom-dots li.is-active {
-  width: 40px;
-  background: #fff;
-}

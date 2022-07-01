@@ -4,7 +4,7 @@
   <nano71/>
 </template>
 <script setup>
-import Nano71 from "../components/pageFooter.vue";
+import Nano71 from "../components/nano71Footer.vue";
 import Header from "../components/article/header.vue";
 </script>
 <script>

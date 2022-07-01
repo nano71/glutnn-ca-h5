@@ -21,7 +21,7 @@ export default {
 }
 </script>
 <script setup>
-import Nano71 from "../components/pageFooter.vue";
+import Nano71 from "../components/nano71Footer.vue";
 import Carousel from "../components/index/carousel.vue";
 import News from "../components/index/news.vue";
 import Notice from "../components/index/notice&publicity.vue";

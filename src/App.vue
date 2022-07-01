@@ -6,7 +6,7 @@
   </keep-alive>
 </template>
 <script setup>
-import TopBar from "./components/navbar.vue";
+import TopBar from "./components/nano71Navbar.vue";
 import Welcome from "./components/index/welcome.vue";
 </script>
 <style lang="less">

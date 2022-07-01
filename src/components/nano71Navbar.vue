@@ -16,15 +16,7 @@ export default {
       zIndex: null
     }
   },
-  created() {
-  },
   methods: {
-    onScroll() {
-      if (this.$store.state.navbar.topMode) {
-        let scrollTop = document.documentElement.scrollTop || document.body.scrollTop
-        this.topMode !== scrollTop < 200 && (this.topMode = scrollTop < 200)
-      }
-    },
     action() {
       this.show = !this.show
       if (!this.show) {

@@ -24,7 +24,7 @@ export default {
   <n-carousel draggable autoplay effect="fade" style="height: 240px;position:fixed;top: 0">
     <img
         v-for="url in imageList.urls"
-        class="carousel-img"
+        class="carouselImage"
         :src="url"
         alt="">
     <template #dots="{ total, currentIndex, to }">
@@ -32,14 +32,14 @@ export default {
         {{ imageList.titles[currentIndex] }}
       </div>
       <div class="placeholder-48"/>
-      <ul class="custom-dots">
-        <li
+      <div class="customDots">
+        <div
             v-for="index of total"
             :key="index"
-            :class="{ ['is-active']: currentIndex === index - 1 }"
+            :class="{ active: currentIndex === index - 1 }"
             @click="to(index - 1)"
         />
-      </ul>
+      </div>
     </template>
   </n-carousel>
 

@@ -86,7 +86,7 @@
   }
 }
 
-.custom-dots, .count {
+.customDots, .count {
   display: flex;
   position: absolute;
   bottom: 20px;
@@ -114,16 +114,17 @@
   }
 }
 
-.custom-dots div {
+.customDots div {
   width: 20px;
   height: 4px;
   margin: 0 3px;
   background-color: @BORDER;
   transition: width 0.3s, background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
+
+  &.active {
+    width: 40px;
+    background: @COLOR;
+  }
 }
 
-.custom-dots div.is-active {
-  width: 40px;
-  background: @COLOR;
-}

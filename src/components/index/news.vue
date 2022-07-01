@@ -25,11 +25,11 @@
             更多
           </div>
         </div>
-        <div class="custom-dots">
+        <div class="customDots">
           <div
               v-for="index of total"
               :key="index"
-              :class="{ ['is-active']: currentIndex === index - 1 }"
+              :class="{ active: currentIndex === index - 1 }"
               @click="to(index - 1)"
           />
         </div>
