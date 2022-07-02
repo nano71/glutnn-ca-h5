@@ -8,6 +8,7 @@
   z-index: 10;
   height: 48px;
 
+
   hr {
     margin-bottom: 0;
     border-top: 1px @BORDER solid;
@@ -41,9 +42,10 @@
   align-items: center;
   position: absolute;
   z-index: 11;
-  width: calc(100vw - 20px);
+  width: calc(100% - 20px);
   transition: .5s;
   padding: 0 10px;
+
 
   .logo {
     display: flex;
@@ -73,11 +75,9 @@
     justify-content: space-between;
     align-items: center;
 
-    i {
+    .icon {
       transition: all .5s;
       line-height: 30px;
-      height: 30px;
-      width: 30px;
       font-size: 17px;
     }
 
@@ -121,7 +121,7 @@
   transition: .5s;
   background-color: transparent;
   height: 48px;
-  width: 100vw;
+  width: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -156,8 +156,7 @@
 
     .icon {
       padding: 0 8px;
-      width: 14px;
-      object-fit: cover;
+      font-size: 17px;
     }
 
     input {
@@ -228,6 +227,7 @@
   position: fixed;
   top: 0;
   width: 100vw;
+
   background-color: transparent;
   z-index: 1;
 }
@@ -236,7 +236,7 @@
   background-color: transparent;
   border-bottom-color: transparent;
 
-  i {
+  .icon {
     color: white;
   }
 
@@ -266,7 +266,7 @@
       }
     }
 
-    i {
+    .icon {
       opacity: 0;
       visibility: hidden;
     }

@@ -1,8 +1,8 @@
 <template>
   <welcome/>
-  <top-bar ref="navbar"/>
+  <top-bar/>
   <keep-alive>
-    <router-view></router-view>
+    <router-view/>
   </keep-alive>
 </template>
 <script setup>

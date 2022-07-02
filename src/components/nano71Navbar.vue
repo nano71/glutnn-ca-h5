@@ -40,7 +40,7 @@ export default {
         <img class="whiteMode" src="https://nano71.com/img/glutnn/logo-white.png" alt="">
       </div>
       <div class="menu">
-        <i class="ri-search-line" @click="!show&&(show=!show,searchMode=true)"></i>
+        <ri-search-line class="icon" @click="!show&&(show=!show,searchMode=true)"/>
         <div class="lineBox" @click="action">
           <div class="line"></div>
           <div class="line"></div>
@@ -69,7 +69,6 @@ export default {
       <div class="list">
         <div class="item" v-for="item in linkList.names">{{ item }}</div>
       </div>
-      <!--      <img src="../images/logo-2.png" alt="" class="bigLogo">-->
     </div>
   </div>
   <!--  <div class="placeholder-48"></div>-->

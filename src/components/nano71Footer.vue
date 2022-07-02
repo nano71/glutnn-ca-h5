@@ -44,7 +44,7 @@
 
 <script>
 export default {
-  name: "pageFooter",
+  name: "nano71Footer",
   data() {
     return {
       footerMenuList: [
