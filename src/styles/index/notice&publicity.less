@@ -73,37 +73,15 @@
     }
   }
 
+  @import "../list.less";
 
-  .list {
-    margin-bottom: 40px;
+  .list .more {
+    font-size: 12px;
+    text-align: center;
+    color: @COLOR;
 
-    .item {
-      overflow: hidden;
-      border-bottom: 1px solid @BORDER;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      height: 36px;
-      padding: 10px;
-      line-height: 36px;
-
-      .time {
-        color: #646CFF;
-        margin-right: 5px;
-      }
-    }
-
-    .item:last-child {
-      border-bottom: 0;
-    }
-
-    .more {
-      font-size: 12px;
-      text-align: center;
-      color: @COLOR;
-
-      i {
-        margin-left: 5px;
-      }
+    i {
+      margin-left: 5px;
     }
   }
 }

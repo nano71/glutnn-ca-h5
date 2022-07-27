@@ -21,7 +21,7 @@
         <div class="count">
           {{ currentIndex + 1 + " / " + total }}
           <div class="line"/>
-          <div class="more">
+          <div class="more" @click="$router.push('/list/news')">
             更多
           </div>
         </div>

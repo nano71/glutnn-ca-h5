@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="content">
-      <div class="item" v-for="(url,index) in list.icons">
+      <div class="item" @click="$router.push(list.hrefs[index])" v-for="(url,index) in list.icons">
         <img :src="url" alt="">
         {{ list.names[index] }}
         <ri-arrow-right-s-line class="icon"/>
@@ -29,7 +29,8 @@ import guide from "../../images/icon/guide.png"
 
 const list = {
   names: ["文件下载专区", "各项规章制度", "师生办事流程"],
-  icons: [downloadIcon, regulationsIcon, guide]
+  icons: [downloadIcon, regulationsIcon, guide],
+  hrefs: ["/list/file", "#/", "#/"]
 }
 </script>
 <script>

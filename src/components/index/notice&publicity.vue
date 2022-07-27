@@ -20,7 +20,7 @@
             <span class="time">[06-25]</span>
             {{ title }}
           </div>
-          <div class="item more">更多通知</div>
+          <div class="item more" @click="$router.push('/list/notice')">更多通知</div>
 
         </div>
       </div>
@@ -35,7 +35,7 @@
             <span class="time">[06-25]</span>
             {{ title }}
           </div>
-          <div class="item more">更多公告</div>
+          <div class="item more" @click="$router.push('/list/publicity')">更多公告</div>
         </div>
       </div>
     </div>
