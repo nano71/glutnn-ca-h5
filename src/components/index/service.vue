@@ -30,7 +30,7 @@ import guide from "../../images/icon/guide.png"
 const list = {
   names: ["文件下载专区", "各项规章制度", "师生办事流程"],
   icons: [downloadIcon, regulationsIcon, guide],
-  hrefs: ["/list/file", "#/", "#/"]
+  hrefs: ["/list/file", "/list/rules", "/list/do"]
 }
 </script>
 <script>

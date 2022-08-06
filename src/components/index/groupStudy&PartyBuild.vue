@@ -5,7 +5,7 @@
         <div class="small">GROUP | PARTY</div>
         <div class="text">团学与党建</div>
       </div>
-      <div class="more">
+      <div class="more" @click="$router.push('/list/group')">
         更多内容
         <ri-arrow-right-s-line class="icon"/>
       </div>
@@ -13,7 +13,7 @@
     <div class="card">
       <div class="title">团学工作</div>
       <div class="list">
-        <div class="item" v-for="item in 2">
+        <div class="item" v-for="item in 2" @click="$router.push('/article/1')">
           <div class="time">
             <div class="month">
               05
@@ -38,7 +38,7 @@
     <div class="card">
       <div class="title">党群工作</div>
       <div class="list">
-        <div class="item" v-for="item in 2">
+        <div class="item" v-for="item in 2" @click="$router.push('/article/1')">
           <div class="time">
             <div class="month">
               05

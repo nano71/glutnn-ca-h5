@@ -8,11 +8,26 @@ import Index from "../pages/index.vue"
 import Error from "../pages/error.vue"
 import Article from "../pages/article.vue";
 import List from "../pages/list.vue";
+import Search from "../pages/search.vue";
 
 const routes = [
     {
         path: "/",
         component: Index
+    },
+    {
+        path: "/index",
+        component: Index
+    },
+    {
+        path: "/search",
+        component: Search,
+        children: [
+            {
+                path: ":id",
+                component: Search,
+            },
+        ],
     },
     {
         path: "/article",

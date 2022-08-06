@@ -5,18 +5,35 @@ export default {
       show: false,
       searchMode: false,
       topMode: false,
+      search: "",
       searchList: {
         names: ["图书资源", "国际交流", "继续教育", "人才招聘"],
-        paths: []
+        paths: ["http://lib.glutnn.cn/", "http://departs.glutnn.cn/gjlx/", "http://departs.glutnn.cn/jxjyzx/", "http://www.glutnn.cn/detail.aspx?articleid=7046"]
       },
       linkList: {
-        names: ["系简介", "新闻/公告", "人才培养", "师资队伍", "党群工作", "招生就业", "服务指南", "学生竞赛", "学校校历"]
+        names: ["系简介", "新闻/公告", "师资队伍", "党群工作", "服务指南", "学生竞赛", "学校校历"],
+        paths: ["/intro", "/list/news", "/list/teachers", "/list/group", "/index#service", "/list/competition", "http://departs.glutnn.cn/jwglb/list.aspx?classid=2708"]
       },
       host: "glutnn.cn",
       zIndex: null
     }
   },
   methods: {
+    toSearch() {
+      this.$router.push("/search")
+      this.searchMode = false
+      this.action()
+
+    },
+    to(path) {
+      this.$router.push(path)
+      this.action()
+      if (path.includes("#")) {
+        let where = path.split("#")[1]
+        let offset = document.querySelector(`#${(where)}`).offsetTop
+        window.scrollTo(0, offset + 120)
+      }
+    },
     action() {
       this.show = !this.show
       if (!this.show) {
@@ -54,20 +71,33 @@ export default {
         <div class="input">
           <label for="searchInput">
             <ri-search-line class="icon"/>
-            <input @focus="searchMode=true" :placeholder="`搜索 ${host}`" id="searchInput" type="text">
+            <input
+                v-model="search"
+                @focus="searchMode=true"
+                :placeholder="`搜索 ${host}`"
+                id="searchInput"
+                type="text">
           </label>
         </div>
-        <div class="cancel" @click="searchMode=false">
+        <div class="cancel" v-if="search.length" @click="toSearch">
+          搜索
+        </div>
+        <div class="cancel" v-else @click="searchMode=false">
           取消
         </div>
+
       </div>
       <hr/>
       <div class="searchList list">
         <div class="tag">快速链接</div>
-        <div class="item" v-for="item in searchList.names">{{ item }}</div>
+        <div class="item" v-for="(item,i) in searchList.names" @click="to(searchList.paths[i])">
+          {{ item }}
+        </div>
       </div>
       <div class="list">
-        <div class="item" v-for="item in linkList.names">{{ item }}</div>
+        <div class="item" v-for="(item,i) in linkList.names" @click="to(linkList.paths[i])">
+          {{ item }}
+        </div>
       </div>
     </div>
   </div>

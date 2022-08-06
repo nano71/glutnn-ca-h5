@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="list">
-      <div class="card" v-for="(url,index) in list.images">
+      <div class="card" v-for="(url,index) in list.images" @click="to(list.urls[index])">
         <img :src="url" alt="">
         <div class="title" v-if="list.titles[index]">
           {{ list.titles[index] }}
@@ -25,8 +25,10 @@ const list = {
     "https://nano71.com/img/glutnn/dangshi.people.com.cn.jpg",
     "https://nano71.com/img/glutnn/cloud.jpg"
   ],
+  urls: ["http://jy.glutnn.cn", "http://dangshi.people.com.cn", "https://720yun.com/t/01fjO7kmza6?from=singlemessage&pano_id=3635792"],
   titles: ["", "", "校园全景VR"]
 }
+const to = url => window.location.href = url
 </script>
 <script>
 export default {

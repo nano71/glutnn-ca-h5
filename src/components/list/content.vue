@@ -65,7 +65,7 @@ export default {
           href: ""
         }
       ],
-      style: `<style>.n-pagination-item{border-radius: 0 !important;}</style>  `
+      style: `<style>.n-pagination-item{border-radius: 0 !important;}.n-pagination-item--active{color: #646CFF !important;border-color: #646CFF !important}</style>  `
     }
   },
   methods: {

@@ -16,7 +16,7 @@
               alt="">
         </div>
         <div class="list">
-          <div class="item" v-for="title in notice.titles">
+          <div class="item" v-for="title in notice.titles" @click="$router.push('/article/1')">
             <span class="time">[06-25]</span>
             {{ title }}
           </div>
@@ -31,7 +31,7 @@
               alt="">
         </div>
         <div class="list">
-          <div class="item" v-for="title in publicity.titles">
+          <div class="item" v-for="title in publicity.titles" @click="$router.push('/article/1')">
             <span class="time">[06-25]</span>
             {{ title }}
           </div>

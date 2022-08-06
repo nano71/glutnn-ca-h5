@@ -13,7 +13,7 @@
         draggable
         :loop="false"
     >
-      <n-carousel-item class="item" v-for="(url,index) in majors.images">
+      <n-carousel-item class="item" v-for="(url,index) in majors.images" @click="$router.push('/article/1')">
         <div class="type">本科 - 学制四年</div>
         <img :src="url" alt="">
         <div class="title">
