@@ -30,8 +30,10 @@ export default {
       this.action()
       if (path.includes("#")) {
         let where = path.split("#")[1]
-        let offset = document.querySelector(`#${(where)}`).offsetTop
-        window.scrollTo(0, offset + 120)
+        setTimeout(() => {
+          let offset = document.querySelector(`#${(where)}`).offsetTop
+          window.scrollTo(0, offset + 120)
+        }, 500)
       }
     },
     action() {
