@@ -1,81 +1,81 @@
 @import "../theme.less";
 
 .areaTitle {
-  display: flex;
-  margin: 0 20px 20px;
+    display: flex;
+    margin: 0 20px 20px;
 
-  .left {
-    line-height: 1;
+    .left {
+        line-height: 1;
 
-    .small {
-      font-size: 18px;
+        .small {
+            font-size: 18px;
+        }
+
+        .text {
+            font-size: 27px;
+            font-weight: 400;
+            margin: 0;
+        }
     }
-
-    .text {
-      font-size: 27px;
-      font-weight: 400;
-      margin: 0;
-    }
-  }
 
 
 }
 
 #major {
 
-  padding-top: 40px;
-  margin: 20px 0;
-  background: linear-gradient(to bottom, #F2F3F9 0%, #F2F3F9 50%, white 50%, white 100%);
+    padding-top: 40px;
+    margin: 20px 0;
+    background: linear-gradient(to bottom, #F2F3F9 0%, #F2F3F9 50%, white 50%, white 100%);
 
-  .content {
-    > div > .item {
-      width: 285px !important;
-      padding: 0 10px;
+    .content {
+        > div > .item {
+            width: 285px !important;
+            padding: 0 10px;
 
-      .type {
+            .type {
 
-      }
+            }
 
-      img {
-        margin: 14px 0 16px;
-        width: 100%;
-        height: 180px;
-      }
+            img {
+                margin: 14px 0 16px;
+                width: 100%;
+                height: 180px;
+            }
 
-      .title {
-        font-size: 16px;
-      }
+            .title {
+                font-size: 16px;
+            }
 
-      .mainCourse {
-        margin-top: 16px;
+            .mainCourse {
+                margin-top: 16px;
 
-        .item {
-          position: relative;
-          color: #999999;
-          padding-left: 10px;
+                .item {
+                    position: relative;
+                    color: #999999;
+                    padding-left: 10px;
+                }
+
+                .item:before {
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    content: "";
+                    width: 4px;
+                    height: 4px;
+                    background-color: @COLOR;
+                }
+
+                .tag {
+                    margin-bottom: 5px;
+                }
+
+                .tag, .more {
+                    color: @COLOR;
+                    font-size: 12px;
+                }
+
+            }
         }
-
-        .item:before {
-          position: absolute;
-          left: 0;
-          top: 50%;
-          transform: translateY(-50%);
-          content: "";
-          width: 4px;
-          height: 4px;
-          background-color: @COLOR;
-        }
-
-        .tag {
-          margin-bottom: 5px;
-        }
-
-        .tag, .more {
-          color: @COLOR;
-          font-size: 12px;
-        }
-
-      }
     }
-  }
 }

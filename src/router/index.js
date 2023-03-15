@@ -1,8 +1,5 @@
 // history模式
-import {
-    createRouter,
-    createWebHashHistory,
-} from 'vue-router'
+import {createRouter, createWebHashHistory,} from 'vue-router'
 
 import Index from "../pages/index.vue"
 import Error from "../pages/error.vue"

@@ -1,15 +1,15 @@
 <template>
-  <div class="placeholder-48"></div>
-  <n-h2>搜索结果</n-h2>
-  <nano71-footer2/>
+    <div class="placeholder-48"></div>
+    <n-h2>搜索结果</n-h2>
+    <nano71-footer2/>
 </template>
 
 <script>
 export default {
-  name: "search",
-  created() {
-    this.$store.commit("setNavbarTopMode", [false, false])
-  },
+    name: "search",
+    created() {
+        this.$store.commit("setNavbarTopMode", [false, false])
+    },
 }
 </script>
 <script setup>

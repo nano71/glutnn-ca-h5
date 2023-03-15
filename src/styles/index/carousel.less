@@ -1,58 +1,58 @@
 .titleArea {
-  position: absolute;
-  color: #ffffff;
-  font-size: 16px;
-  text-align: center;
-  right: 20px;
-  width: calc(100vw - 40px);
-  //transform: translateX(-50%);
-  bottom: 30px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
+    position: absolute;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+    right: 20px;
+    width: calc(100vw - 40px);
+    //transform: translateX(-50%);
+    bottom: 30px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .placeholder-48 {
-  bottom: 0;
-  position: absolute;
-  left: 0;
-  width: 100vw;
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.31) 0%, rgba(0, 0, 0, 0.31) 40%, rgba(0, 0, 0, 0) 100%);
-  background-repeat: repeat-x;
-  background-position: center;
-  background-size: auto 100%;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.31) 0%, rgba(0, 0, 0, 0.31) 40%, rgba(0, 0, 0, 0) 100%);
+    background-repeat: repeat-x;
+    background-position: center;
+    background-size: auto 100%;
 }
 
 .carouselImage {
-  width: 100vw;
+    width: 100vw;
 
-  height: 240px;
-  object-fit: cover;
+    height: 240px;
+    object-fit: cover;
 }
 
 .customDots {
-  display: flex;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  bottom: 14px;
-  right: 20px;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 14px;
+    right: 20px;
 
-  div {
-    display: inline-block;
-    width: 12px;
-    height: 4px;
-    margin: 0 3px;
-    //border-radius: 4px;
-    background-color: rgba(255, 255, 255, 0.4);
-    transition: width 0.3s, background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
+    div {
+        display: inline-block;
+        width: 12px;
+        height: 4px;
+        margin: 0 3px;
+        //border-radius: 4px;
+        background-color: rgba(255, 255, 255, 0.4);
+        transition: width 0.3s, background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
 
-    &.active {
-      width: 40px;
-      background: #fff;
+        &.active {
+            width: 40px;
+            background: #fff;
+        }
     }
-  }
 
 }
 

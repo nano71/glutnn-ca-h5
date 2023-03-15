@@ -12,6 +12,7 @@ export default createStore({
         }
     },
     mutations: {
+
         setNavbarTopMode(state, [boolean, can = true]) {
             state.navbar.topMode = boolean
             state.navbar.canTopMode = can
