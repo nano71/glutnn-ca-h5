@@ -21,7 +21,7 @@
 <script setup>
 const list = {
     images: [
-        "http://jsj.glutnn.cn/static/jsj/images/jy.glutnn.cn.jpg",
+        "/proxy/static/jsj/images/jy.glutnn.cn.jpg",
         "https://nano71.com/img/glutnn/dangshi.people.com.cn.jpg",
         "https://nano71.com/img/glutnn/cloud.jpg"
     ],

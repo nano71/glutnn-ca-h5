@@ -8,11 +8,11 @@ export default {
             search: "",
             searchList: {
                 names: ["图书资源", "国际交流", "继续教育", "人才招聘"],
-                paths: ["http://lib.glutnn.cn/", "http://departs.glutnn.cn/gjlx/", "http://departs.glutnn.cn/jxjyzx/", "http://www.glutnn.cn/detail.aspx?articleid=7046"]
+                paths: ["//lib.glutnn.cn/", "//departs.glutnn.cn/gjlx/", "//departs.glutnn.cn/jxjyzx/", "//www.glutnn.cn/detail.aspx?articleid=7046"]
             },
             linkList: {
-                names: ["系简介", "新闻/公告", "师资队伍", "党群工作", "服务指南", "学生竞赛", "学校校历"],
-                paths: ["/intro", "/list/news", "/list/teachers", "/list/group", "/index#service", "/list/competition", "http://departs.glutnn.cn/jwglb/list.aspx?classid=2708"]
+                names: ["系简介", "系部新闻", "通知公告", "师资队伍", "党群工作", "服务指南", "学生竞赛", "学校校历"],
+                paths: ["/intro", "/list/news", "/list/publicity", "/list/teachers", "/list/group", "/index#service", "/list/competition", "//departs.glutnn.cn/jwglb/list.aspx?classid=2708"]
             },
             host: "glutnn.cn",
             zIndex: null
@@ -21,11 +21,16 @@ export default {
     methods: {
         toSearch() {
             this.$router.push("/search")
+            window.open("https://www.baidu.com/s?wd=site:www.glutnn.cn%20" + this.search)
             this.searchMode = false
-            this.action()
-
+            // this.action()
         },
         to(path) {
+            if (path.includes("http") || path.includes("//")) {
+                window.open(path)
+                this.searchMode = false
+                return
+            }
             this.$router.push(path)
             this.action()
             if (path.includes("#")) {
@@ -44,6 +49,15 @@ export default {
                     this.zIndex = null
                 }, 500)
             }
+            return true
+        }
+    },
+    watch: {
+        $route(to, from) {
+            console.log(from.path)
+            console.log(to.path)
+            if (to.path === "/")
+                this.$store.commit("setNavbarTopMode", [true])
         }
     }
 }
@@ -59,7 +73,7 @@ export default {
                 <img class="whiteMode" src="https://nano71.com/img/glutnn/logo-white.png" alt="">
             </div>
             <div class="menu">
-                <ri-search-line class="icon" @click="!show&&(show=!show,searchMode=true)"/>
+                <ri-search-line class="icon" @click="show||(searchMode=true)&&(show=!show)"/>
                 <div class="lineBox" @click="action">
                     <div class="line"></div>
                     <div class="line"></div>

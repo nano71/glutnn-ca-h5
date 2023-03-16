@@ -54,12 +54,13 @@ export default {
         }
     },
     created() {
-        this.$store.commit("setNavbarTopMode", [true])
+        console.log("created");
         this.getHtmlResource()
     },
     methods: {
         getHtmlResource() {
-            axios.get("/html").then(result => {
+            console.log("getHtmlResource");
+            axios.get("/proxy").then(result => {
                 document = common.htmlParser(result.data)
                 this.parseBanner(document)
                 this.parseNews(document)
@@ -108,7 +109,7 @@ export default {
         parseNews(document) {
             let news = document.querySelectorAll(".news_left > a")
             for (let i = 0; i < news.length; i++) {
-                this.news.pictures.push(news[i].querySelector("img").src)
+                this.news.pictures.push(news[i].querySelector("img").src.replace("/uploads/", "/proxy/uploads/"))
                 this.news.titles.push(news[i].querySelector("p.title").innerText)
                 this.news.ids.push(common.getHrefIds(news[i]))
             }
@@ -116,7 +117,8 @@ export default {
         },
         parseBanner(document) {
             let bannerText = document.querySelector("script:not([src])").innerText
-            this.banner.urls = bannerText.replace(/\w+ \w+.=|[\[\]\\);"'(\n]|url| /g, "").split(",")
+            this.banner.urls = bannerText.replace(/\w+ \w+.=|[\[\]\\);"'(\n]|url| /g, "").replaceAll("/uploads/", "/proxy/uploads/").split(",")
+            console.log(this.banner);
         }
     }
 }
@@ -134,6 +136,7 @@ import Topic from "../components/index/topic.vue";
 <style scoped>
 #index {
     transition: .5s;
+    background: #646CFF
 }
 
 #main {

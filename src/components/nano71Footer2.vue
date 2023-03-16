@@ -14,7 +14,7 @@
                 <br>
                 Copyright © 2021 - 2022 nano71. All Rights Reserved.
                 <br>
-                nano71 dev team 版权所有
+                lightning Development team 版权所有
             </div>
         </div>
         <img src="https://nano71.com/img/glutnn/logo-2.png" alt="" class="backgroundLogo">

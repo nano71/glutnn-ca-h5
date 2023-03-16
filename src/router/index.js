@@ -10,11 +10,17 @@ import Search from "../pages/search.vue";
 const routes = [
     {
         path: "/",
-        component: Index
+        component: Index,
+        meta: {
+            keep: true
+        }
     },
     {
         path: "/index",
-        component: Index
+        component: Index,
+        meta: {
+            keep: true
+        }
     },
     {
         path: "/search",

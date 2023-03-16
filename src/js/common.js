@@ -1,6 +1,7 @@
 export default {
     htmlParser(html) {
         let parser = new DOMParser();
+        console.log(parser);
         return parser.parseFromString(html, "text/html");
     },
     getHrefIds(element) {
