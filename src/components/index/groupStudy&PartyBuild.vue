@@ -13,7 +13,7 @@
         <div class="card">
             <div class="title">团学工作</div>
             <div class="list">
-                <div class="item" v-for="(item,index) in group.titles" @click="$router.push('/article/1')">
+                <div class="item" v-for="(item,index) in group.titles" @click="$router.push('/article/'+group.ids[index])">
                     <div class="time">
                         <div class="month">
                             {{ group.dates[index][0] }}
@@ -38,7 +38,7 @@
         <div class="card">
             <div class="title">党群工作</div>
             <div class="list">
-                <div class="item" v-for="(item,index) in party.titles" @click="$router.push('/article/1')">
+                <div class="item" v-for="(item,index) in party.titles" @click="$router.push('/article/'+party.ids[index])">
                     <div class="time">
                         <div class="month">
                             {{ party.dates[index][0] }}

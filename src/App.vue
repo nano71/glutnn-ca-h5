@@ -8,7 +8,6 @@
             </KeepAlive>
             <component :is="Component" :key="$route.name" v-if="!$route.meta.keep"></component>
         </router-view>
-
     </n-config-provider>
 </template>
 <script setup>

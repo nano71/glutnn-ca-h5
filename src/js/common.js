@@ -10,5 +10,9 @@ export default {
     dateParser(element) {
         let dates = element.querySelector(".date").innerText.split("-")
         return [dates.pop(), dates.pop()].reverse().join("-")
+    },
+    insertStr(source, start, newStr) {
+        return source.slice(0, start) + newStr + source.slice(start)
     }
 }
+
