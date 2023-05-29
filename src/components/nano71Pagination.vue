@@ -5,21 +5,24 @@
         style="justify-content: space-between;margin-bottom: 40px;"
         :page-slot="7"
         @update:page="onChange"
-        page-count="21"/>
+        :page-count="max"/>
 </template>
 
 <script>
 import {defineComponent, ref} from "vue";
 
 export default defineComponent({
-    props: {},
+    props: ["max"],
     name: "nano71Pagination",
-    setup() {
+    daa() {
         return {
-            page: ref(1)
+            page: 1
         };
     },
-    methods: {
+  created() {
+    console.log(this.max);
+  },
+  methods: {
         onChange(page) {
             this.$emit("onChange", page)
         }
