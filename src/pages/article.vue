@@ -1,6 +1,6 @@
 <template>
     <div class="placeholder-48"></div>
-    <nano71-header :title="title" :items="breadcrumbItems"/>
+    <nano71-header :title="title" :english="english" :items="breadcrumbItems"/>
     <content :article="article"/>
     <nano71-footer2/>
 </template>
@@ -18,15 +18,16 @@ export default {
     name: "article",
     data() {
         return {
-            title: "新闻",
+            title: "",
+            english: "",
             breadcrumbItems: [
                 {
-                    name: "新闻",
-                    href: "#/list/news"
+                    name: "",
+                    href: "#/list/",
                 },
                 {
-                    name: "正文"
-                }
+                    name: "正文",
+                },
             ],
             article: {
                 title: "",
@@ -35,37 +36,40 @@ export default {
                 author: "",
                 editor: "",
                 auditor: "",
-                content: `加载中...`
-            }
-        }
+                content: `加载中...`,
+            },
+        };
     },
     created() {
-        this.$store.commit("setNavbarTopMode", [false, false])
-
-        this.getDetail(this.$route.params["id"])
+        let category = this.$route.query.category;
+        this.title = common.categories[category].title;
+        this.breadcrumbItems[0].name = this.title;
+        this.breadcrumbItems[0].href += category;
+        this.english = common.categories[category].eng;
+        this.$store.commit("setNavbarTopMode", [false, false]);
+        this.getDetail(this.$route.params.id);
     },
     methods: {
         getDetail(id) {
             console.log(id);
             axios.get(`/proxy/html/Article/${id}.html`).then(r => {
-                let document = common.htmlParser(r.data)
-                document = document.querySelector(".info_page_content_body_text")
-                let textInfo = document.querySelector("div").innerText.replaceAll(/\n|\s/g, "").replaceAll(":",":  ").split("|")
-                console.log(textInfo);
-                let endIndex = document.innerHTML.indexOf("<p")
-
-                this.article.title = document.querySelector("h2").innerText
-                this.article.time = common.insertStr(textInfo[0], 10, " ")
-                this.article.source = textInfo[1]
-                this.article.author = textInfo[2]
-                this.article.editor = textInfo[3]
-                this.article.auditor = textInfo[4]
-                this.article.content = document.innerHTML.substring(endIndex)
-                console.log(document.innerHTML);
-            })
-        }
-    }
-}
+                let document = common.htmlParser(r.data);
+                document = document.querySelector(".info_page_content_body_text");
+                let textInfo = document.querySelector("div").innerText.replaceAll(/\n|\s/g, "").replaceAll(":", ":  ").split("|");
+                // console.log(textInfo);
+                let endIndex = document.innerHTML.indexOf("<p");
+                this.article.title = document.querySelector("h2").innerText;
+                this.article.time = common.insertStr(textInfo[0], 10, " ");
+                this.article.source = textInfo[1];
+                this.article.author = textInfo[2];
+                this.article.editor = textInfo[3];
+                this.article.auditor = textInfo[4];
+                this.article.content = document.innerHTML.substring(endIndex);
+                // console.log(document.innerHTML);
+            });
+        },
+    },
+};
 </script>
 
 <style scoped>

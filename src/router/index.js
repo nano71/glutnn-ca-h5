@@ -55,7 +55,7 @@ const routes = [
                 redirect: '/404',
             },
             {
-                path: ":id",
+                path: ":category",
                 component: List,
             },
         ],
