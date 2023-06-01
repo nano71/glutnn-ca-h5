@@ -49,7 +49,7 @@ export default {
                     this.list.push({
                         title: item.querySelector("a").innerHTML,
                         time: item.querySelector("span").innerHTML.substring(3),
-                        id: common.getHrefIds(item.querySelector("a").href),
+                        id: common.getHrefIds(item.querySelector("a")),
                     });
                 }
                 this.load = false;

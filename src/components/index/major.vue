@@ -51,7 +51,7 @@ export default {
         return {
             majors: {
                 images: [
-                    "https://images.pexels.com/photos/844297/pexels-photo-844297.jpeg?auto=compress&cs=tinysrgb&w=1200",
+                    "https://nano71.com/img/glutnn/ds.jpg",
                     "https://images.pexels.com/photos/6964349/pexels-photo-6964349.jpeg?auto=compress&cs=tinysrgb&w=1200",
                     "https://images.pexels.com/photos/6964349/pexels-photo-6964349.jpeg?auto=compress&cs=tinysrgb&w=1200",
                     "https://images.pexels.com/photos/6964349/pexels-photo-6964349.jpeg?auto=compress&cs=tinysrgb&w=1200",

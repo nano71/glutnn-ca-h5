@@ -12,7 +12,7 @@ export default {
             },
             linkList: {
                 names: ["系简介", "系部新闻", "通知公告", "师资队伍", "党群工作", "服务指南", "学生竞赛", "学校校历"],
-                paths: ["/intro", "/list/news", "/list/publicity", "/list/teachers", "/list/group", "/index#service", "/list/competition", "//departs.glutnn.cn/jwglb/list.aspx?classid=2708"]
+                paths: ["/article/161", "/list/news", "/list/publicity", "/list/teachers", "/list/group", "/index#service", "/list/competition", "//departs.glutnn.cn/jwglb/list.aspx?classid=2708"]
             },
             host: "glutnn.cn",
             zIndex: null

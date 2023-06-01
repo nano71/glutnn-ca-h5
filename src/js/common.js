@@ -16,7 +16,7 @@ export default {
         publicity: {title: "公告", eng: "Publicity", url: "/event_lists.shtml", itemsXML: ".once"},
         file: {title: "文件下载", eng: "File download", url: "/jsj/service/download.shtml", itemsXML: ".once"},
         majors: {title: "专业介绍", eng: "Major introduction", url: "/jsj/talent/speciality.shtml", itemsXML: ".once"},
-        group: {title: "团学党建", eng: "Group", url: "/jsj/service/download.shtml", itemsXML: ".once"},
+        group: {title: "团学党建", eng: "Group", url: "/jsj/party/partyinfo.shtml", itemsXML: ".once"},
         service: {title: "服务指南", eng: "Service guide", itemsXML: ".once"},
         competition: {
             title: "学生竞赛",
@@ -25,8 +25,13 @@ export default {
             itemsXML: ".once",
         },
         teachers: {title: "师资队伍", eng: "Teaching team", itemsXML: ".once"},
-        rules: {title: "规章制度", eng: "Rules and regulations", itemsXML: ".once"},
-        do: {title: "办事流程", eng: "Do things", itemsXML: ".once"},
+        rules: {
+            title: "规章制度",
+            eng: "Rules and regulations",
+            url: "/jsj/service/regulations.shtml",
+            itemsXML: ".once"
+        },
+        do: {title: "办事流程", eng: "Do things", url: "/jsj/service/process.shtml", itemsXML: ".once"},
     },
 };
 
