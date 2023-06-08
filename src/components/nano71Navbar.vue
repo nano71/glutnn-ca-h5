@@ -20,7 +20,7 @@ export default {
     },
     methods: {
         toSearch() {
-            this.$router.push("/search")
+            // this.$router.push("/search")
             window.open("https://www.baidu.com/s?wd=site:www.glutnn.cn%20" + this.search)
             this.searchMode = false
             // this.action()

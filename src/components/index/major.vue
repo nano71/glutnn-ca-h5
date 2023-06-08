@@ -11,11 +11,11 @@
             </div>
         </div>
         <n-carousel
-                class="content"
-                slides-per-view="auto"
-                centered-slides
-                draggable
-                :loop="false"
+            class="content"
+            slides-per-view="auto"
+            centered-slides
+            draggable
+            :loop="false"
         >
             <n-carousel-item class="item" v-for="(url,index) in majors.images"
                              @click="$router.push('/article/'+majors.ids[index]+'?category=majors')">
@@ -33,10 +33,10 @@
             <template #dots="{ total, currentIndex, to }">
                 <div class="custom-dots">
                     <div
-                            v-for="index of total"
-                            :key="index"
-                            :class="{ ['is-active']: currentIndex === index - 1 }"
-                            @click="to(index - 1)"
+                        v-for="index of total"
+                        :key="index"
+                        :class="{ ['is-active']: currentIndex === index - 1 }"
+                        @click="to(index - 1)"
                     />
                 </div>
             </template>
@@ -52,11 +52,11 @@ export default {
             majors: {
                 images: [
                     "https://nano71.com/img/glutnn/ds.jpg",
-                    "https://images.pexels.com/photos/6964349/pexels-photo-6964349.jpeg?auto=compress&cs=tinysrgb&w=1200",
-                    "https://images.pexels.com/photos/6964349/pexels-photo-6964349.jpeg?auto=compress&cs=tinysrgb&w=1200",
-                    "https://images.pexels.com/photos/6964349/pexels-photo-6964349.jpeg?auto=compress&cs=tinysrgb&w=1200",
-                    "https://images.pexels.com/photos/6964349/pexels-photo-6964349.jpeg?auto=compress&cs=tinysrgb&w=1200",
-                    "https://images.pexels.com/photos/6964343/pexels-photo-6964343.jpeg?auto=compress&cs=tinysrgb&w=1200",
+                    "https://nano71.com/img/glutnn/na.jpg",
+                    "https://nano71.com/img/glutnn/ca.jpg",
+                    "https://nano71.com/img/glutnn/bd.jpg",
+                    "https://nano71.com/img/glutnn/cn.jpg",
+                    "https://nano71.com/img/glutnn/nl.jpg"
                 ],
                 types: [
                     "本科 - 学制四年",

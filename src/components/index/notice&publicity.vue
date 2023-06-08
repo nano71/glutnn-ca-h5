@@ -12,7 +12,8 @@
             <div id="notice">
                 <div class="imageBox">
                     <img
-                        src="https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        @click="$router.push('/list/notice')"
+                        src="https://nano71.com/img/glutnn/notice.jpg"
                         alt="">
                 </div>
                 <div class="list">
@@ -27,7 +28,8 @@
             <div id="publicity">
                 <div class="imageBox">
                     <img
-                        src="https://images.pexels.com/photos/8960464/pexels-photo-8960464.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                        @click="$router.push('/list/publicity')"
+                        src="https://nano71.com/img/glutnn/publicity.jpg"
                         alt="">
                 </div>
                 <div class="list">

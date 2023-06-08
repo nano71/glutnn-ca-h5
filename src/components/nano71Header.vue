@@ -1,6 +1,7 @@
 <template>
     <div id="header">
-        <n-h1 class="title" @click="$router.push('/list/'+$route.query.category)">{{ title }} <span>{{ english }}</span>
+        <n-h1 class="title" @click="$route.query.category&&$router.push('/list/'+$route.query.category)">{{ title }}
+            <span>{{ english }}</span>
         </n-h1>
         <n-breadcrumb style="white-space: normal">
             <n-breadcrumb-item href="#/">首页</n-breadcrumb-item>

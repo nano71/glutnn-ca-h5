@@ -16,7 +16,8 @@ export default {
         publicity: {title: "公告", eng: "Publicity", url: "/event_lists.shtml", itemsXML: ".once"},
         file: {title: "文件下载", eng: "File download", url: "/jsj/service/download.shtml", itemsXML: ".once"},
         majors: {title: "专业介绍", eng: "Major introduction", url: "/jsj/talent/speciality.shtml", itemsXML: ".once"},
-        group: {title: "团学党建", eng: "Group", url: "/jsj/party/partyinfo.shtml", itemsXML: ".once"},
+        party: {title: "党建动态", eng: "Party", url: "/jsj/party/partyinfo.shtml", itemsXML: ".once"},
+        group: {title: "团学工作", eng: "Group", url: "/jsj/student/txgz.shtml", itemsXML: ".once"},
         service: {title: "服务指南", eng: "Service guide", itemsXML: ".once"},
         competition: {
             title: "学生竞赛",
