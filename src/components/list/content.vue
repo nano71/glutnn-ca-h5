@@ -1,6 +1,6 @@
 <template>
     <n-spin v-if="load" :show="true" stroke="#646CFF"
-            style="width: 100vw;height: calc(100vh - 160px);">
+            style="width: 100%;height: calc(100vh - 160px);">
         <template #description>
             加载中...
         </template>

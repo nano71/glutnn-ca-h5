@@ -26,7 +26,7 @@ export default {
 }
 </script>
 <template>
-    <n-carousel draggable autoplay effect="fade" style="height: 240px;position:fixed;top: 0">
+    <n-carousel id="carousel" autoplay draggable effect="fade">
         <img
             v-for="url in urls"
             class="carouselImage"

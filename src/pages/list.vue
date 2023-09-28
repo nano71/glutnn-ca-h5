@@ -37,10 +37,12 @@ export default {
             this.getList(page);
         },
         getList(page) {
+            console.log("getList");
             this.load = true;
             this.page = page;
             let item = this.categories[this.$route.params.category];
             axios.get("/proxy" + item.url + "?page=" + page).then(result => {
+                console.log("then");
                 let document = common.htmlParser(result.data);
                 let items = document.querySelectorAll(item.itemsXML);
                 this.list = [];
@@ -54,7 +56,10 @@ export default {
                 }
                 this.load = false;
                 // console.log(this.list);
-            });
+            }).catch(reason => {
+                console.log(reason);
+                this.getList()
+            })
         },
     },
 };

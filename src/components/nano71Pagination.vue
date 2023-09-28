@@ -1,10 +1,10 @@
 <template>
     <n-pagination
-            class="pagination"
-            style="justify-content: space-between;margin-bottom: 40px;"
-            :page-slot="7"
-            @update:page="onChange"
-            :page-count="max"/>
+        :page-count="max"
+        :page-slot="7"
+        class="pagination"
+        style="justify-content: space-between;margin-bottom: 40px;"
+        @update:page="onChange"/>
 </template>
 
 <script>

@@ -1,16 +1,19 @@
 export default {
     htmlParser(html) {
         let parser = new DOMParser();
-        console.log(parser);
         return parser.parseFromString(html, "text/html");
-    }, getHrefIds(element) {
+    },
+    getHrefIds(element) {
         return element.href.split("/").pop().split(".")[0];
-    }, dateParser(element) {
+    },
+    dateParser(element) {
         let dates = element.querySelector(".date").innerText.split("-");
         return [dates.pop(), dates.pop()].reverse().join("-");
-    }, insertStr(source, start, newStr) {
+    },
+    insertStr(source, start, newStr) {
         return source.slice(0, start) + newStr + source.slice(start);
-    }, categories: {
+    },
+    categories: {
         news: {title: "新闻", eng: "News", url: "/news_lists.shtml", getAll: false, itemsXML: ".news_list_right"},
         notice: {title: "通知", eng: "Notice", url: "/event_lists.shtml", itemsXML: ".once"},
         publicity: {title: "公告", eng: "Publicity", url: "/event_lists.shtml", itemsXML: ".once"},
@@ -33,6 +36,6 @@ export default {
             itemsXML: ".once"
         },
         do: {title: "办事流程", eng: "Do things", url: "/jsj/service/process.shtml", itemsXML: ".once"},
-    },
+    }
 };
 

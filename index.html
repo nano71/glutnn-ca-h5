@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
@@ -8,12 +9,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>计算机应用系 - 桂林理工大学南宁分校</title>
 </head>
+
 <body>
 <div id="app">
     <div id="welcome"></div>
     <div id="index"></div>
 </div>
 <script type="module" src="./src/main.js"></script>
+<script>
+    console.log(window.location);
+    if (window.outerWidth > 425 || window.innerWidth > 425) {
+        if (window.location.pathname === "/") {
+            // window.location.href = "http://jsj.glutnn.cn"
+        }
+        alert("移动端网页, 请使用移动设备访问!")
+    }
+</script>
 </body>
 </html>
 

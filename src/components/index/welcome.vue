@@ -5,8 +5,10 @@
             <span class="middle"></span>
             <span class="bottom"></span>
         </div>
-        <img :class="{logo:true,show:shows[0]}" src="https://nano71.com/img/glutnn/logo-black.png" @load="start(0)" alt="">
-        <img :class="{welcome:true,show:shows[1]}" src="https://nano71.com/img/glutnn/welcome.png" @load="start(1)" alt="">
+        <img :class="{logo:true,show:shows[0]}" alt="" src="https://nano71.com/img/glutnn/logo-black.png"
+             @load="start(0)">
+        <img :class="{welcome:true,show:shows[1]}" alt="" src="https://nano71.com/img/glutnn/welcome.png"
+             @load="start(1)">
     </div>
 </template>
 <script>
@@ -17,6 +19,9 @@ export default {
             initCount: 0,
             shows: [false, false]
         }
+    },
+    created() {
+
     },
     methods: {
         start() {

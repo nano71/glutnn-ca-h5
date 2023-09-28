@@ -28,10 +28,10 @@
                 </div>
                 <div class="customDots">
                     <div
-                            v-for="index of total"
-                            :key="index"
-                            :class="{ active: currentIndex === index - 1 }"
-                            @click="to(index - 1)"
+                        v-for="index of total"
+                        :key="index"
+                        :class="{ active: currentIndex === index - 1 }"
+                        @click="to(index - 1)"
                     />
                 </div>
 
