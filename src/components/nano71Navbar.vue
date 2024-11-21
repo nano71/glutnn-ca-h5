@@ -68,9 +68,9 @@ export default {
     <div id="topBar" :class="{show}" :style="`z-index: ${zIndex};`">
         <div :class="{top:true,searchMode,topMode:$store.state.navbar.topMode}">
             <div class="logo" @click="$router.push('/')">
-                <img class="lineMode" src="https://nano71.com/img/glutnn/logo-line.png" alt="">
-                <img class="blackMode" src="https://nano71.com/img/glutnn/logo-black.png" alt="">
-                <img class="whiteMode" src="https://nano71.com/img/glutnn/logo-white.png" alt="">
+                <img class="lineMode" src="../images/logo-line.png" alt="">
+                <img class="blackMode" src="../images/logo-black.png" alt="">
+                <img class="whiteMode" src="../images/logo-white.png" alt="">
             </div>
             <div class="menu">
                 <ri-search-line class="icon" @click="show||(searchMode=true)&&(show=!show)"/>

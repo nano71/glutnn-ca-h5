@@ -36,29 +36,35 @@ export default {
         onChange(page) {
             this.getList(page);
         },
-        getList(page) {
+        getList(page = 1) {
             console.log("getList");
             this.load = true;
             this.page = page;
             let item = this.categories[this.$route.params.category];
-            axios.get("/proxy" + item.url + "?page=" + page).then(result => {
-                console.log("then");
+            axios.get(item.url + "&a1101365p=" + page).then(result => {
                 let document = common.htmlParser(result.data);
-                let items = document.querySelectorAll(item.itemsXML);
+                let items = document.querySelectorAll(".articleList > a");
                 this.list = [];
-                this.maxPage = document.querySelector("p.pageRemark b")?.innerHTML;
+                let pages = document.querySelectorAll("span.p_no a")
+                const url = pages[pages.length - 1]?.href
+                if (!url) {
+                    this.maxPage = 1
+                } else {
+                    const params = new URLSearchParams(url.split('?')[1]);
+                    this.maxPage = params.get("a1101365t");
+                }
+
                 for (let item of items) {
                     this.list.push({
-                        title: item.querySelector("a").innerHTML,
-                        time: item.querySelector("span").innerHTML.substring(3),
-                        id: common.getHrefIds(item.querySelector("a")),
-                    });
+                        title: item.querySelector(".title").innerText.replaceAll("\n", ""),
+                        time: item.querySelector(".date").innerText.trim().split("\n").reverse().join("-").split("-").splice(1).join("-"),
+                        id: common.getHrefIds(item, false),
+                    })
                 }
                 this.load = false;
-                // console.log(this.list);
             }).catch(reason => {
                 console.log(reason);
-                this.getList()
+                // this.getList()
             })
         },
     },

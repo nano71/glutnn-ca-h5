@@ -13,7 +13,7 @@
                 <div class="imageBox">
                     <img
                         @click="$router.push('/list/notice')"
-                        src="https://nano71.com/img/glutnn/notice.jpg"
+                        src="/src/images/notice.png"
                         alt="">
                 </div>
                 <div class="list">
@@ -29,7 +29,7 @@
                 <div class="imageBox">
                     <img
                         @click="$router.push('/list/publicity')"
-                        src="https://nano71.com/img/glutnn/publicity.jpg"
+                        src="/src/images/publicity.png"
                         alt="">
                 </div>
                 <div class="list">
@@ -41,8 +41,8 @@
                 </div>
             </div>
         </div>
-        <img src="https://nano71.com/img/glutnn/logo-2.png" alt="" class="background">
-        <img src="https://nano71.com/img/glutnn/welcome.png" alt="" class="background">
+        <img src="/src/images/logo-2.png" alt="" class="background">
+        <img src="/src/images/welcome.png" alt="" class="background">
     </div>
 
 </template>

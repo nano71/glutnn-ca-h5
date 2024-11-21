@@ -54,7 +54,7 @@ export default {
                         "http://departs.glutnn.cn/jwglb/list.aspx?classid=2708",
                         "http://jw.glutnn.cn/",
                         "http://glut.edu.cn/",
-                        "http://glutnn.cn/"
+                        "http://nnfx.glut.edu.cn/"
                     ],
                     active: false
                 }

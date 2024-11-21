@@ -5,10 +5,8 @@
             <span class="middle"></span>
             <span class="bottom"></span>
         </div>
-        <img :class="{logo:true,show:shows[0]}" alt="" src="https://nano71.com/img/glutnn/logo-black.png"
-             @load="start(0)">
-        <img :class="{welcome:true,show:shows[1]}" alt="" src="https://nano71.com/img/glutnn/welcome.png"
-             @load="start(1)">
+        <img :class="{welcome:true,show:shows[1]}" alt="" src="/src/images/welcome.png"
+             @load="start()">
     </div>
 </template>
 <script>
@@ -25,15 +23,12 @@ export default {
     },
     methods: {
         start() {
-            this.initCount++
-            if (this.initCount === 2) {
+            setTimeout(() => {
+                this.shows = [true, true]
                 setTimeout(() => {
-                    this.shows = [true, true]
-                    setTimeout(() => {
-                        this.end = true
-                    }, 1000)
-                }, 500)
-            }
+                    this.end = true
+                }, 1000)
+            }, 500)
         }
     }
 }

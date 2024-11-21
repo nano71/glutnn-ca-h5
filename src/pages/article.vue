@@ -53,20 +53,21 @@ export default {
     },
     methods: {
         getDetail(id) {
-            console.log(id);
-            axios.get(`/proxy/html/Article/${id}.html`).then(r => {
+            axios.get(`/jsj/info/${id.replace("-", "/")}.htm`).then(r => {
                 console.log("then");
                 let document = common.htmlParser(r.data);
-                document = document.querySelector(".info_page_content_body_text");
-                let textInfo = document.querySelector("div").innerText.replaceAll(/\n|\s/g, "").replaceAll(":", ":  ").split("|");
+                document = document.querySelector(".articleContent");
+                let textInfo = document.querySelectorAll(".infoBar div")
+
+                this.article.title = document.querySelector(".title").innerText.replaceAll("\n", "");
+                this.article.time = textInfo[0].innerText
+                this.article.source = textInfo[1].innerText;
+                this.article.author = textInfo[2].innerText;
+                this.article.editor = textInfo[3].innerText;
+                this.article.auditor = textInfo[4].innerText;
+
                 // console.log(textInfo);
                 let endIndex = document.innerHTML.indexOf("<p");
-                this.article.title = document.querySelector("h2").innerText;
-                this.article.time = common.insertStr(textInfo[0], 10, " ");
-                this.article.source = textInfo[1];
-                this.article.author = textInfo[2];
-                this.article.editor = textInfo[3];
-                this.article.auditor = textInfo[4];
                 this.article.content = document.innerHTML.substring(endIndex);
                 // console.log(document.innerHTML);
             }).catch(reason => {

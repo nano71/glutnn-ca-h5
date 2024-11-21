@@ -15,7 +15,7 @@
                     新闻动态 NEWS
                 </div>
                 <div class="title">
-                    {{ titles[index] }}
+                    <span>[{{ dates[index] }}]</span>{{ titles[index] }}
                 </div>
             </n-carousel-item>
             <template #dots="{ total, currentIndex, to }">
@@ -44,7 +44,7 @@
 let document;
 export default {
     name: "news",
-    props: ["titles", "ids", "pictures"],
+    props: ["titles", "ids","dates", "pictures"],
     data() {
         return {};
     },

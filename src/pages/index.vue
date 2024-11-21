@@ -3,7 +3,7 @@
         <carousel :titles="banner.titles" :urls="banner.urls"/>
         <div class="placeholder-240"></div>
         <div id="main">
-            <news :ids="news.ids" :pictures="news.pictures" :titles="news.titles"/>
+            <news :ids="news.ids" :dates="news.dates" :pictures="news.pictures" :titles="news.titles"/>
             <notice :notice="notice" :publicity="publicity"/>
             <major/>
             <group-study-party-build :group="group" :party="party"/>
@@ -30,7 +30,8 @@ export default {
             news: {
                 ids: [],
                 titles: [],
-                pictures: []
+                pictures: [],
+                dates: []
             },
             notice: {
                 ids: [],
@@ -57,72 +58,94 @@ export default {
     created() {
         console.log("created");
         this.getHtmlResource()
+        this.parseNoticeAndPublicity()
     },
     methods: {
         getHtmlResource() {
             console.log("getHtmlResource");
-            axios.get("/proxy").then(result => {
+            axios.get("/jsj").then(result => {
                 console.log("then");
                 document = common.htmlParser(result.data)
                 this.parseBanner(document)
                 this.parseNews(document)
-                this.parseNoticeAndPublicity(document)
+
                 this.parseGroupAndParty(document)
             }).catch(reason => {
                 console.log(reason);
-                this.getList()
+                // this.getList()
             })
         },
         parseGroupAndParty(document) {
-            let plates = document.querySelectorAll("body > .info > div")
-            let groups = plates[1].querySelectorAll("div > a")
-            let partyBuilds = plates[0].querySelectorAll("div > a")
 
-            for (let i = 0; i < groups.length; i++) {
-                this.group.titles.push(groups[i].querySelector(".title span").innerText)
-                this.group.dates.push(common.dateParser(groups[i]).split("-"))
+            let groups = document.querySelectorAll(".party .flex a") // 团学
+            let partyBuilds = document.querySelectorAll(".studentWork .list > a") // 党建
+            for (let i = 0; i < 4; i++) {
+                this.group.titles.push(groups[i].querySelector(".title").innerText)
+                let date = groups[i].querySelector(".month")?.innerText || groups[i].querySelector(".date").innerText.split(" ")[0].slice(5)
+                let dates = date.split("-")
+                this.group.dates.push(dates)
                 this.group.ids.push(common.getHrefIds(groups[i]))
-                if (i >= 3) {
-                    break
-                }
             }
-            for (let i = 0; i < partyBuilds.length; i++) {
-                this.party.titles.push(partyBuilds[i].querySelector(".title span").innerText)
-                this.party.dates.push(common.dateParser(partyBuilds[i]).split("-"))
+            console.log(this.group);
+            for (let i = 0; i < 4; i++) {
+                this.party.titles.push(partyBuilds[i].querySelector(".title").innerText)
+                this.party.dates.push(common.dateParser(partyBuilds[i],"/").split("-"))
                 this.party.ids.push(common.getHrefIds(partyBuilds[i]))
-                if (i >= 3) {
-                    break
-                }
             }
         },
-        parseNoticeAndPublicity(document) {
-            let plates = document.querySelectorAll("body > .notify > div")
-            let notices = plates[0].querySelectorAll(".info_list_box a")
-            let publicity = plates[1].querySelectorAll(".info_list_box a")
-            for (let i = 0; i < notices.length; i++) {
-                this.notice.titles.push(notices[i].querySelector(".title span").innerText)
-                this.notice.dates.push(common.dateParser(notices[i]))
-                this.notice.ids.push(common.getHrefIds(notices[i]))
-            }
-            for (let i = 0; i < publicity.length; i++) {
-                this.publicity.titles.push(publicity[i].querySelector("span").innerText)
-                this.publicity.dates.push(common.dateParser(publicity[i]))
-                this.publicity.ids.push(common.getHrefIds(publicity[i]))
-            }
+        parseNoticeAndPublicity() {
+            let urls = [
+                "/jsj/list.jsp?urltype=tree.TreeTempUrl&wbtreeid=1063",
+                "/jsj/list.jsp?a1101365t=11&a1101365p=2&a1101365c=10&urltype=tree.TreeTempUrl&wbtreeid=1063",
+                "/jsj/list.jsp?a1101365t=11&a1101365p=3&a1101365c=10&urltype=tree.TreeTempUrl&wbtreeid=1063"
+            ]
+            urls.forEach((url, index) => {
+                if (this.publicity.titles.length < 6 && this.notice.titles.length < 6)
+                    axios.get(url).then(result => {
+                        let document = common.htmlParser(result.data)
+                        let notices = document.querySelectorAll(".articleList > a")
+                        for (let i = 0; i < notices.length; i++) {
+                            let title = notices[i].querySelector(".title").innerText
+                            let description = notices[i].querySelector(".description").innerText
+                            let id = common.getHrefIds(notices[i])
+                            let date = notices[i]
+                                .querySelector(".date")
+                                .innerText.trim().split("-").reverse()
+                                .join("-")
+                                .split("\n")[0]
+                            let key = "publicity"
+                            if (!title.includes("公示")) {
+                                if (!description.includes("公示期")) {
+                                    key = "notice"
+                                }
+                            }
+                            if (this[key].titles.length <= 5) {
+                                this[key].titles.push(title)
+                                this[key].dates.push(date)
+                                this[key].ids.push(id)
+                            }
+                        }
+
+                    })
+            })
+
             // console.log(this.notice);
         },
         parseNews(document) {
-            let news = document.querySelectorAll(".news_left > a")
+            let news = document.querySelectorAll(".news .list > a")
             for (let i = 0; i < news.length; i++) {
-                this.news.pictures.push(news[i].querySelector("img").src.replace("/uploads/", "/proxy/uploads/"))
-                this.news.titles.push(news[i].querySelector("p.title").innerText)
+                this.news.pictures.push(news[i].querySelector("img").src)
+                this.news.titles.push(news[i].querySelector(".title").innerText.replace("\n", "").trim())
                 this.news.ids.push(common.getHrefIds(news[i]))
+                this.news.dates.push(common.dateParser(news[i]))
             }
             // console.log(this.news);
         },
         parseBanner(document) {
-            let bannerText = document.querySelector("script:not([src])").innerText
-            this.banner.urls = bannerText.replace(/\w+ \w+.=|[\[\]\\);"'(\n]|url| /g, "").replaceAll("/uploads/", "/proxy/uploads/").split(",")
+            let carouselImages = document.querySelectorAll(".carousel a img")
+            carouselImages.forEach(image => {
+                this.banner.urls.push(image.src)
+            })
             console.log(this.banner);
         }
     }

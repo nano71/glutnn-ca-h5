@@ -32,15 +32,17 @@ export default defineConfig({
         host: "0.0.0.0",
         port: 8080,
         proxy: {
-            "/proxy": {
-                target: "https://nano71.com/proxy",
+            "/jsj": {
+                target: "https://nnfx.glut.edu.cn/",
                 changeOrigin: true,
-                rewrite: (path) => path.replace(/^\/proxy/, '') // 不可以省略rewrite
             },
-            "/uploads": {
-                target: "https://nano71.com/proxy/uploads",
+            "/images": {
+                target: "https://nnfx.glut.edu.cn/jsj",
                 changeOrigin: true,
-                rewrite: (path) => path.replace(/^\/uploads/, '') // 不可以省略rewrite
+            },
+            "/__local": {
+                target: "https://nnfx.glut.edu.cn/",
+                changeOrigin: true,
             },
         }
     }

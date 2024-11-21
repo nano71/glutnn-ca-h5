@@ -1,7 +1,6 @@
 <template>
     <div id="pageFooter">
-        <img src="https://nano71.com/img/glutnn/logo-white.png" alt="" class="logo">
-        <img src="https://nano71.com/img/glutnn/welcome-white.png" alt="" class="text">
+        <img src="../images/logo-white.png" alt="" class="logo">
         <div class="menuList">
             <div :class="{item:true,active:item.active}"
                  v-for="(item,index) in footerMenuList">
@@ -12,11 +11,11 @@
                 </div>
                 <div class="list">
                     <div class="qrcodeBox" v-if="index===0">
-                        <img class="qrcode" src="https://nano71.com/img/glutnn/qrcode.png" alt="">
+                        <img class="qrcode" src="../images/qrcode.png" alt="">
                         <div class="text">
                             欢迎关注
                             <br>
-                            计算机应用系
+                            计算机应用学院
                             <br>
                             微信公众号
                         </div>
@@ -75,7 +74,7 @@ export default {
                         "http://departs.glutnn.cn/jwglb/list.aspx?classid=2708",
                         "http://jw.glutnn.cn/",
                         "http://glut.edu.cn/",
-                        "http://glutnn.cn/"
+                        "http://nnfx.glut.edu.cn/"
                     ],
                     active: false
                 }

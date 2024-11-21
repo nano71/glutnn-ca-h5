@@ -18,7 +18,7 @@
             :loop="false"
         >
             <n-carousel-item class="item" v-for="(url,index) in majors.images"
-                             @click="$router.push('/article/'+majors.ids[index]+'?category=majors')">
+                             @click="$router.push('/article/'+'1065-'+majors.ids[index]+'?category=majors')">
                 <div class="type">{{ majors.types[index] }}</div>
                 <img :src="url" alt="">
                 <div class="title">
@@ -76,7 +76,7 @@ export default {
                     ["营销型网站策划与搭建", "网络营销", "SEO搜索引擎优化"],
                 ],
                 ids: [
-                    1134, 1135, 1014, 1013, 1137, 170,
+                    1658, 1657, 1656, 1660, 1659, 1663,
                 ],
             },
         };
