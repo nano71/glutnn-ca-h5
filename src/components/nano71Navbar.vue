@@ -14,7 +14,79 @@ export default {
                 names: ["系简介", "系部新闻", "通知公告", "师资队伍", "党群工作", "服务指南", "学生竞赛", "学校校历"],
                 paths: ["/article/161", "/list/news", "/list/publicity", "/list/teachers", "/list/group", "/index#service", "/list/competition", "//departs.glutnn.cn/jwglb/list.aspx?classid=2708"]
             },
-            host: "glutnn.cn",
+            linkActiveIndex: -1,
+            linkMap: [
+                {
+                    name: "学院概况",
+                    list: [
+                        "学院简介@/article/1057-1120?category=",
+                        "组织架构@",
+                        "现任领导@",
+                        "联系我们@"
+                    ]
+                },
+                {
+                    name: "综合新闻",
+                    list: [
+                        "学院新闻@/list/news",
+                        "通知公告@/list/notice",
+                    ]
+                },
+                {
+                    name: "人才培养",
+                    list: [
+                        "专业介绍@/list/major",
+                        "专业建设",
+                        "实习实训",
+                    ]
+                },
+                {
+                    name: "人才培养",
+                    list: [
+                        "党建动态",
+                        "工会之家",
+                    ]
+                },
+                {
+                    name: "师资队伍",
+                    list: [
+                        "教学团队",
+                    ]
+                },
+                {
+                    name: "学生园地",
+                    list: [
+                        "团学工作",
+                        "学生资助",
+                        "榜样引领",
+                        "校友天地",
+                    ]
+                },
+                {
+                    name: "招生就业",
+                    list: [
+                        "招生信息",
+                        "就业信息",
+                        "就业指导",
+                    ]
+                },
+                {
+                    name: "服务指南",
+                    list: [
+                        "下载专区",
+                        "规章制度",
+                        "办事流程",
+                    ]
+                },
+                {
+                    name: "学生竞赛",
+                    list: [
+                        "竞赛通知",
+                        "竞赛荣誉",
+                    ]
+                }
+            ],
+            host: "nnfx.glut.edu.cn/jsj",
             zIndex: null
         }
     },
@@ -90,7 +162,7 @@ export default {
                         <input
                             v-model="search"
                             @focus="searchMode=true"
-                            :placeholder="`搜索 ${host}`"
+                            :placeholder="`搜索内容`"
                             id="searchInput"
                             type="text">
                     </label>
@@ -111,8 +183,22 @@ export default {
                 </div>
             </div>
             <div class="list">
-                <div class="item" v-for="(item,i) in linkList.names" @click="to(linkList.paths[i])">
-                    {{ item }}
+                <div class="item" @click="to('/')">
+                    首页
+                </div>
+                <div :class="{item:1,active:linkActiveIndex===i}" v-for="(item,i) in linkMap" >
+                    <div class="menuTitle">
+                        <div @click="to(item.list[0].split('@')[1])">
+                            {{ item.name }}
+                        </div>
+                        <ri-add-line class="icon" @click="linkActiveIndex=i"/>
+                        <ri-subtract-line class="icon" @click="linkActiveIndex=-1"/>
+                    </div>
+                    <div class="list2">
+                        <div class="item" v-for="item2 in item.list" @click="to(linkList.paths[i])">
+                            {{item2.split('@')[0]}}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

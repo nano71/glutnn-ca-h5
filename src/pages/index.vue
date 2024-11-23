@@ -5,9 +5,9 @@
         <div id="main">
             <news :ids="news.ids" :dates="news.dates" :pictures="news.pictures" :titles="news.titles"/>
             <notice :notice="notice" :publicity="publicity"/>
-            <major/>
+<!--            <major/>-->
             <group-study-party-build :group="group" :party="party"/>
-            <service/>
+<!--            <service/>-->
             <topic/>
         </div>
         <nano71/>

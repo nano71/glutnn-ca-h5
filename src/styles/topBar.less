@@ -199,10 +199,83 @@
 
         > .item {
             //opacity: 0.8;
-            height: 44px;
+            max-height: 44px;
             line-height: 44px;
             color: #444;
             border-bottom: 1px @BORDER solid;
+            transition: 0.5s;
+
+            .menuTitle {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                position: relative;
+
+
+                .icon {
+                    transition: .5s;
+                    font-size: 18px;
+                    position: absolute;
+                    right: 0;
+                    opacity: 0;
+                    z-index: 1;
+                }
+
+                .icon:nth-child(2) {
+                    opacity: 1;
+                    z-index: 2;
+                }
+            }
+
+            .list2 {
+                border-top: 1px @BORDER solid;
+                padding: 0 16px;
+                transition: 0.5s;
+                //transform: translateY(-80px);
+                opacity: 0;
+
+                .item {
+                    //padding: 6px 0 16px;
+                    //color: white;
+                    //font-size: 12px;
+                    text-decoration: unset;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    padding-left: 6px;
+                    &:before {
+                        content: "";
+                        width: 8px;
+                        height: 8px;
+                        left: -12px;
+                        background-color: #523fff;
+                        position: absolute;
+
+                    }
+                }
+            }
+
+            &.active {
+                max-height: 100vh;
+
+                .menuTitle {
+                    .icon:nth-child(2) {
+                        opacity: 0;
+                        z-index: 1;
+                    }
+
+                    .icon:last-child {
+                        opacity: 1;
+                        z-index: 2;
+                    }
+                }
+
+                .list2 {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
         }
 
         > .item:last-child {
