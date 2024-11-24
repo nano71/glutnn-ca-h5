@@ -13,11 +13,19 @@
                      @click="$router.push('/article/'+party.ids[index]+'?category=party')">
                     <div class="time">
                         <div class="month">
-                            {{ party.dates[index][0] }}
+                            {{ group.dates[index][1] }}
                         </div>
                         /
                         <div class="day">
+                            {{ group.dates[index][0] }}
+                        </div>
+                    </div>
+                    <div class="time" v-if="false">
+                        <div class="day">
                             {{ party.dates[index][1] }}
+                        </div>
+                        <div class="month">
+                            {{ party.dates[index][0]+"-"+party.dates[index][1] }}
                         </div>
                     </div>
                     <div class="right">
@@ -45,11 +53,19 @@
                      @click="$router.push('/article/'+group.ids[index]+'?category=group')">
                     <div class="time">
                         <div class="month">
-                            {{ group.dates[index][0] }}
+                            {{ group.dates[index][1] }}
                         </div>
                         /
                         <div class="day">
-                            {{ group.dates[index][1] }}
+                            {{ group.dates[index][0] }}
+                        </div>
+                    </div>
+                    <div class="time" v-if="false">
+                        <div class="day">
+                            {{ index === 0 ?group.dates[index][2].split(" ")[0]:group.dates[index][1] }}
+                        </div>
+                        <div class="month">
+                            {{ group.dates[index][0].trim().replace(" ", "-").replaceAll(/\n|\s/g, "") + (index === 0 ? "-" + party.dates[index][1] : "")}}
                         </div>
                     </div>
                     <div class="right">

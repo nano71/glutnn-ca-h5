@@ -5,9 +5,9 @@
         <div id="main">
             <news :ids="news.ids" :dates="news.dates" :pictures="news.pictures" :titles="news.titles"/>
             <notice :notice="notice" :publicity="publicity"/>
-<!--            <major/>-->
+            <!--            <major/>-->
             <group-study-party-build :group="group" :party="party"/>
-<!--            <service/>-->
+            <!--            <service/>-->
             <topic/>
         </div>
         <nano71/>
@@ -81,6 +81,7 @@ export default {
             let partyBuilds = document.querySelectorAll(".studentWork .list > a") // 党建
             for (let i = 0; i < 4; i++) {
                 this.group.titles.push(groups[i].querySelector(".title").innerText)
+                // let date = groups[i].querySelector(".date").innerText
                 let date = groups[i].querySelector(".month")?.innerText || groups[i].querySelector(".date").innerText.split(" ")[0].slice(5)
                 let dates = date.split("-")
                 this.group.dates.push(dates)
@@ -89,6 +90,7 @@ export default {
             console.log(this.group);
             for (let i = 0; i < 4; i++) {
                 this.party.titles.push(partyBuilds[i].querySelector(".title").innerText)
+                // this.party.dates.push(partyBuilds[i].querySelector(".date").innerText.split("/"))
                 this.party.dates.push(common.dateParser(partyBuilds[i],"/").split("-"))
                 this.party.ids.push(common.getHrefIds(partyBuilds[i]))
             }

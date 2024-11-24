@@ -35,54 +35,54 @@ export default {
                 {
                     name: "人才培养",
                     list: [
-                        "专业介绍@/list/major",
-                        "专业建设",
-                        "实习实训",
+                        "专业介绍@/list/majors",
+                        "专业建设@/list/majors2",
+                        "实习实训@/list/majors3",
                     ]
                 },
                 {
-                    name: "人才培养",
+                    name: "党群工作",
                     list: [
-                        "党建动态",
-                        "工会之家",
+                        "党建动态@/list/party",
+                        "工会之家@/list/party2",
                     ]
                 },
                 {
                     name: "师资队伍",
                     list: [
-                        "教学团队",
+                        "教学团队@/list/teachers",
                     ]
                 },
                 {
                     name: "学生园地",
                     list: [
-                        "团学工作",
-                        "学生资助",
-                        "榜样引领",
-                        "校友天地",
+                        "团学工作@/list/group",
+                        "学生资助@/list/group2",
+                        "榜样引领@/list/group3",
+                        "校友天地@/list/group4",
                     ]
                 },
                 {
                     name: "招生就业",
                     list: [
-                        "招生信息",
-                        "就业信息",
-                        "就业指导",
+                        "招生信息@/list/admissions",
+                        "就业信息@/list/admissions2",
+                        "就业指导@/list/admissions3",
                     ]
                 },
                 {
                     name: "服务指南",
                     list: [
-                        "下载专区",
-                        "规章制度",
-                        "办事流程",
+                        "下载专区@/list/file",
+                        "规章制度@/list/rules",
+                        "办事流程@/list/do",
                     ]
                 },
                 {
                     name: "学生竞赛",
                     list: [
-                        "竞赛通知",
-                        "竞赛荣誉",
+                        "竞赛通知@/list/competition",
+                        "竞赛荣誉@/list/competition2",
                     ]
                 }
             ],
@@ -186,7 +186,7 @@ export default {
                 <div class="item" @click="to('/')">
                     首页
                 </div>
-                <div :class="{item:1,active:linkActiveIndex===i}" v-for="(item,i) in linkMap" >
+                <div :class="{item:1,active:linkActiveIndex===i}" v-for="(item,i) in linkMap">
                     <div class="menuTitle">
                         <div @click="to(item.list[0].split('@')[1])">
                             {{ item.name }}
@@ -195,8 +195,8 @@ export default {
                         <ri-subtract-line class="icon" @click="linkActiveIndex=-1"/>
                     </div>
                     <div class="list2">
-                        <div class="item" v-for="item2 in item.list" @click="to(linkList.paths[i])">
-                            {{item2.split('@')[0]}}
+                        <div class="item" v-for="item2 in item.list" @click="to(item2.split('@')[1])">
+                            {{ item2.split('@')[0] }}
                         </div>
                     </div>
                 </div>

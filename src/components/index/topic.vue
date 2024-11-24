@@ -21,12 +21,13 @@
 <script setup>
 const list = {
     images: [
-        "/proxy/static/jsj/images/jy.glutnn.cn.jpg",
-        "https://nano71.com/img/glutnn/dangshi.people.com.cn.jpg",
-        "https://nano71.com/img/glutnn/cloud.jpg"
+        "https://nnfx.glut.edu.cn/jsj/img/202203240943424.jpg",
+        "https://nnfx.glut.edu.cn/jsj/img/pexels-luis-gomes-166706-546819.jpg",
+        "https://nnfx.glut.edu.cn/jsj/img/202203240945070.jpg",
+        "https://nnfx.glut.edu.cn/jsj/img/2015060515183976.png"
     ],
     urls: ["http://jy.glutnn.cn", "http://dangshi.people.com.cn", "https://720yun.com/t/01fjO7kmza6?from=singlemessage&pano_id=3635792"],
-    titles: ["", "", "校园全景VR"]
+    titles: ["就业信息", "专业介绍", "招生网", "校园全景VR"]
 }
 const to = url => window.location.href = url
 </script>

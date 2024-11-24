@@ -28,16 +28,16 @@
             <div id="publicity">
                 <div class="imageBox">
                     <img
-                        @click="$router.push('/list/publicity')"
+                        @click="$router.push('/list/notice')"
                         src="/src/images/publicity.png"
                         alt="">
                 </div>
                 <div class="list">
-                    <div class="item" v-for="(title,index) in publicity.titles" @click="$router.push('/article/'+publicity.ids[index]+'?category=publicity')">
+                    <div class="item" v-for="(title,index) in publicity.titles" @click="$router.push('/article/'+publicity.ids[index]+'?category=notice')">
                         <span class="time">[{{ publicity.dates[index] }}]</span>
                         {{ title }}
                     </div>
-                    <div class="item more" @click="$router.push('/list/publicity')">更多公告</div>
+                    <div class="item more" @click="$router.push('/list/notice')">更多公告</div>
                 </div>
             </div>
         </div>

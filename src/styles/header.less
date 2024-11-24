@@ -2,9 +2,13 @@
 
 #header {
     padding: 20px 20px 0;
+    position: relative;
 
     .title {
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
         span {
             //font-size: 16px;
@@ -14,6 +18,28 @@
             bottom: -10px;
             left: 10px;
             z-index: -1;
+        }
+
+        svg {
+            &.active {
+                fill: #523fff;
+            }
+        }
+    }
+
+    .menus {
+        top: 68px;
+        position: absolute;
+        right: 20px;
+        background-color: #523fff;
+        color: white;
+        //width: 150px;
+        z-index: 2;
+
+        .item {
+            height: 44px;
+            line-height: 44px;
+            padding: 0 24px;
         }
     }
 }

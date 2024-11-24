@@ -31,11 +31,11 @@
         </div>
         <div class="siteInfo">
             <div class="copyright">
-                桂ICP备2021003184号-2
+                桂ICP备16010497号-1
                 <br>
-                Copyright © 2021 - 2023 nano71. All Rights Reserved.
+                Copyright © 2024 - 2025 GLUT. All Rights Reserved.
                 <br>
-                lightning Development team 版权所有
+                桂林理工大学 版权所有
             </div>
         </div>
     </div>

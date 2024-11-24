@@ -1,7 +1,8 @@
 <template>
     <div class="placeholder-48"></div>
     <nano71-header :english="categories[$route.params.category].eng"
-                   :title="categories[$route.params.category].title"/>
+                   :title="categories[$route.params.category].title"
+                   :from="categories[$route.params.category].from"/>
     <content :list="list" :load="load" :page="page" :max="maxPage" :type="$route.params.category" @onChange="onChange"/>
     <nano71-footer2/>
 
@@ -31,6 +32,11 @@ export default {
             page: 1,
             categories: common.categories,
         };
+    },
+    watch: {
+        '$route.params.category': function (to, from) {
+            this.getList(1);
+        }
     },
     methods: {
         onChange(page) {
