@@ -1,5 +1,5 @@
 <template>
-    <div class="placeholder-48"></div>
+    <img src="https://nnfx.glut.edu.cn/jsj/img/ban2.jpg" style="height: 200px;width: 100%;object-fit:cover" alt="">
     <nano71-header v-if="$route.query.category" :english="english" :items="breadcrumbItems" :title="title"/>
     <content :article="article"/>
     <nano71-footer2/>
@@ -37,6 +37,7 @@ export default {
                 editor: "",
                 auditor: "",
                 content: `加载中...`,
+                views: ""
             },
         };
     },
@@ -53,19 +54,20 @@ export default {
     },
     methods: {
         getDetail(id) {
-            axios.get(`/jsj/info/${id.replace("-", "/")}.htm`).then(r => {
+            axios.get(`/jsj/info/${id.replace("-", "/")}.htm`).then(async r => {
                 console.log("then");
                 let document = common.htmlParser(r.data);
                 document = document.querySelector(".articleContent");
                 let textInfo = document.querySelectorAll(".infoBar div")
-
+                console.log(textInfo);
                 this.article.title = document.querySelector(".title").innerText.replaceAll("\n", "");
                 this.article.time = textInfo[0].innerText
                 this.article.source = textInfo[1].innerText;
                 this.article.author = textInfo[2].innerText;
                 this.article.editor = textInfo[3].innerText;
                 this.article.auditor = textInfo[4].innerText;
-
+                this.article.views = (await axios.get(`/system/resource/code/news/click/dynclicks.jsp?clickid=${id.split("-")[1]}&owner=2051952726&clicktype=wbnews`)).data
+                console.log(this.article.views)
                 // console.log(textInfo);
                 let endIndex = document.innerHTML.indexOf("<p");
                 this.article.content = document.innerHTML.substring(endIndex);

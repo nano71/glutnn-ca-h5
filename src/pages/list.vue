@@ -1,5 +1,5 @@
 <template>
-    <div class="placeholder-48"></div>
+    <img src="https://nnfx.glut.edu.cn/jsj/img/bar2.jpg" style="height: 200px;width: 100%;object-fit:cover" alt="">
     <nano71-header :english="categories[$route.params.category].eng"
                    :title="categories[$route.params.category].title"
                    :from="categories[$route.params.category].from"/>
@@ -61,9 +61,14 @@ export default {
                 }
 
                 for (let item of items) {
+                    let date = [
+                        item.querySelector(".day").innerText,
+                        item.querySelector(".month").innerText
+                    ]
+                    console.log(date);
                     this.list.push({
                         title: item.querySelector(".title").innerText.replaceAll("\n", ""),
-                        time: item.querySelector(".date").innerText.trim().split("\n").reverse().join("-").split("-").splice(1).join("-"),
+                        date,
                         id: common.getHrefIds(item, false),
                     })
                 }
@@ -76,4 +81,3 @@ export default {
     },
 };
 </script>
-

@@ -10,8 +10,8 @@
         </div>
         <div class="time">
             <!--            <n-time locale="zhCN" :time="new Date(article.time)" time-zone="Asia/Shanghai" type="relative"/>-->
-            发布:
-            {{ article.time }}
+           <div>发布: {{ article.time.split(": ").at(-1)}}</div>
+            <div>浏览量: {{ article.views}}</div>
         </div>
         <div class="HTML" style="margin-top: 20px;" v-html="parseHTML()"></div>
     </div>

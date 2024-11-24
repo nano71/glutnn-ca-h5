@@ -11,7 +11,7 @@
             <div class="list">
                 <div class="item" v-for="(item,index) in party.titles"
                      @click="$router.push('/article/'+party.ids[index]+'?category=party')">
-                    <div class="time">
+                    <div class="time" v-if="false">
                         <div class="month">
                             {{ group.dates[index][1] }}
                         </div>
@@ -20,7 +20,7 @@
                             {{ group.dates[index][0] }}
                         </div>
                     </div>
-                    <div class="time" v-if="false">
+                    <div class="time" v-if="true">
                         <div class="day">
                             {{ party.dates[index][1] }}
                         </div>
@@ -51,7 +51,7 @@
             <div class="list">
                 <div class="item" v-for="(item,index) in group.titles"
                      @click="$router.push('/article/'+group.ids[index]+'?category=group')">
-                    <div class="time">
+                    <div class="time" v-if="false">
                         <div class="month">
                             {{ group.dates[index][1] }}
                         </div>
@@ -60,7 +60,7 @@
                             {{ group.dates[index][0] }}
                         </div>
                     </div>
-                    <div class="time" v-if="false">
+                    <div class="time" v-if="true">
                         <div class="day">
                             {{ index === 0 ?group.dates[index][2].split(" ")[0]:group.dates[index][1] }}
                         </div>

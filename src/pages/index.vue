@@ -81,8 +81,8 @@ export default {
             let partyBuilds = document.querySelectorAll(".studentWork .list > a") // 党建
             for (let i = 0; i < 4; i++) {
                 this.group.titles.push(groups[i].querySelector(".title").innerText)
-                // let date = groups[i].querySelector(".date").innerText
-                let date = groups[i].querySelector(".month")?.innerText || groups[i].querySelector(".date").innerText.split(" ")[0].slice(5)
+                let date = groups[i].querySelector(".date").innerText
+                // let date = groups[i].querySelector(".month")?.innerText || groups[i].querySelector(".date").innerText.split(" ")[0].slice(5)
                 let dates = date.split("-")
                 this.group.dates.push(dates)
                 this.group.ids.push(common.getHrefIds(groups[i]))
@@ -90,8 +90,8 @@ export default {
             console.log(this.group);
             for (let i = 0; i < 4; i++) {
                 this.party.titles.push(partyBuilds[i].querySelector(".title").innerText)
-                // this.party.dates.push(partyBuilds[i].querySelector(".date").innerText.split("/"))
-                this.party.dates.push(common.dateParser(partyBuilds[i],"/").split("-"))
+                this.party.dates.push(partyBuilds[i].querySelector(".date").innerText.split("/"))
+                // this.party.dates.push(common.dateParser(partyBuilds[i],"/").split("-"))
                 this.party.ids.push(common.getHrefIds(partyBuilds[i]))
             }
         },
@@ -110,11 +110,9 @@ export default {
                             let title = notices[i].querySelector(".title").innerText
                             let description = notices[i].querySelector(".description").innerText
                             let id = common.getHrefIds(notices[i])
-                            let date = notices[i]
-                                .querySelector(".date")
-                                .innerText.trim().split("-").reverse()
-                                .join("-")
-                                .split("\n")[0]
+                            let date = [notices[i]
+                                .querySelector(".day").innerText,notices[i]
+                                .querySelector(".month").innerText,]
                             let key = "publicity"
                             if (!title.includes("公示")) {
                                 if (!description.includes("公示期")) {

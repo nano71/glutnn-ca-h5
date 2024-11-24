@@ -62,26 +62,26 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    //flex-direction: column;
-                    //.month {
-                    //    //transform: translateY(-5px);
-                    //    font-size: 12px;
-                    //}
-                    //
-                    //.day {
-                    //    //transform: translateY(5px);
-                    //    font-size: 20px;
-                    //}
-
+                    flex-direction: column;
                     .month {
-                        transform: translateY(-5px);
-                        font-size: 20px;
+                        //transform: translateY(-5px);
+                        font-size: 12px;
                     }
 
                     .day {
-                        transform: translateY(5px);
-                        font-size: 12px;
+                        //transform: translateY(5px);
+                        font-size: 20px;
                     }
+
+                    //.month {
+                    //    transform: translateY(-5px);
+                    //    font-size: 20px;
+                    //}
+                    //
+                    //.day {
+                    //    transform: translateY(5px);
+                    //    font-size: 12px;
+                    //}
                 }
 
                 .right {
@@ -92,6 +92,10 @@
                         line-height: 22px;
                         overflow: hidden;
                         text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        -webkit-line-clamp: 2;
                     }
 
                     .view {

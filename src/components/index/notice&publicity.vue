@@ -18,8 +18,20 @@
                 </div>
                 <div class="list">
                     <div class="item" v-for="(title,index) in notice.titles" @click="$router.push('/article/'+notice.ids[index]+'?category=notice')">
-                        <span class="time">[{{ notice.dates[index] }}]</span>
-                        {{ title }}
+                        <div class="time" v-if="true">
+                            <div class="day">
+                                {{ notice.dates[index][0].trim() }}
+                            </div>
+                            <div class="month">
+                                {{ notice.dates[index][1].trim() }}
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="text">
+                                {{ title }}
+                            </div>
+                        </div>
+
                     </div>
                     <div class="item more" @click="$router.push('/list/notice')">更多通知</div>
 
@@ -34,8 +46,20 @@
                 </div>
                 <div class="list">
                     <div class="item" v-for="(title,index) in publicity.titles" @click="$router.push('/article/'+publicity.ids[index]+'?category=notice')">
-                        <span class="time">[{{ publicity.dates[index] }}]</span>
-                        {{ title }}
+                        <div class="time" v-if="true">
+                            <div class="day">
+                                {{ publicity.dates[index][0].trim() }}
+                            </div>
+                            <div class="month">
+                                {{ publicity.dates[index][1].trim() }}
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="text">
+                                {{ title }}
+                            </div>
+                        </div>
+
                     </div>
                     <div class="item more" @click="$router.push('/list/notice')">更多公告</div>
                 </div>

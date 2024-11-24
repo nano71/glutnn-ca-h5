@@ -4,17 +4,64 @@
     //margin-bottom: 40px;
 
     .item {
-        overflow: hidden;
         border-bottom: 1px solid @BORDER;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        height: 36px;
-        padding: 10px;
-        line-height: 36px;
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+        //color: #ffffff;
+        height: 60px;
 
         .time {
-            color: #646CFF;
+            color: @COLOR;
+
             margin-right: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            .month {
+                //transform: translateY(-5px);
+                font-size: 12px;
+            }
+
+            .day {
+                //transform: translateY(5px);
+                font-size: 20px;
+            }
+
+            //.month {
+            //    transform: translateY(-5px);
+            //    font-size: 20px;
+            //}
+            //
+            //.day {
+            //    transform: translateY(5px);
+            //    font-size: 12px;
+            //}
+        }
+
+        .right {
+            flex: 1;
+
+            .text {
+                //height: 44px;
+                line-height: 22px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                -webkit-line-clamp: 2;
+            }
+
+            .view {
+                margin-top: 5px;
+                color: @COLOR;
+                //display: flex;
+                align-items: center;
+                display: none;
+            }
+
         }
     }
 

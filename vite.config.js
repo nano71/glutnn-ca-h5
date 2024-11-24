@@ -44,6 +44,10 @@ export default defineConfig({
                 target: "https://nnfx.glut.edu.cn/",
                 changeOrigin: true,
             },
+            "/system": {
+                target: "https://nnfx.glut.edu.cn/",
+                changeOrigin: true,
+            },
         }
     }
 })

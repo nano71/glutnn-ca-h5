@@ -7,9 +7,20 @@
     </n-spin>
     <div id="content" v-else>
         <div class="list">
-            <div class="item" v-for="item in list" @click="$router.push('/article/'+item.id+'?category='+type)">
-                <span class="time">{{ item.time }}</span>
-                {{ item.title }}
+            <div class="item" v-for="(item,index) in list" @click="$router.push('/article/'+item.id+'?category='+type)">
+                <div class="time" v-if="true">
+                    <div class="day">
+                        {{ item.date[0] }}
+                    </div>
+                    <div class="month">
+                        {{ item.date[1]}}
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="text">
+                        {{ item.title }}
+                    </div>
+                </div>
             </div>
         </div>
         <nano71-pagination v-if="max>1" :page="page" :max="max" @onChange="onChange"/>
