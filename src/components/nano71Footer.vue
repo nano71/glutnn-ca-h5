@@ -1,6 +1,6 @@
 <template>
     <div id="pageFooter">
-        <img src="../images/logo-white.png" alt="" class="logo">
+        <img alt="" class="logo" src="https://nnfx.glut.edu.cn/jsj/mobile/logo-white.png">
         <div class="menuList">
             <div :class="{item:true,active:item.active}"
                  v-for="(item,index) in footerMenuList">
@@ -11,7 +11,7 @@
                 </div>
                 <div class="list">
                     <div class="qrcodeBox" v-if="index===0">
-                        <img class="qrcode" src="../images/qrcode.png" alt="">
+                        <img alt="" class="qrcode" src="https://nnfx.glut.edu.cn/jsj/mobile/qrcode.png">
                         <div class="text">
                             欢迎关注
                             <br>

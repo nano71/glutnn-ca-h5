@@ -13,7 +13,7 @@
                 <div class="imageBox">
                     <img
                         @click="$router.push('/list/notice')"
-                        src="/src/images/notice.png"
+                        src="https://nnfx.glut.edu.cn/jsj/mobile/notice.png"
                         alt="">
                 </div>
                 <div class="list">
@@ -41,7 +41,7 @@
                 <div class="imageBox">
                     <img
                         @click="$router.push('/list/notice')"
-                        src="/src/images/publicity.png"
+                        src="https://nnfx.glut.edu.cn/jsj/mobile/publicity.png"
                         alt="">
                 </div>
                 <div class="list">
@@ -65,8 +65,8 @@
                 </div>
             </div>
         </div>
-        <img src="/src/images/logo-2.png" alt="" class="background">
-        <img src="/src/images/welcome.png" alt="" class="background">
+        <img alt="" class="background" src="https://nnfx.glut.edu.cn/jsj/mobile/logo-2.png">
+        <img alt="" class="background" src="https://nnfx.glut.edu.cn/jsj/mobile/welcome.png">
     </div>
 
 </template>

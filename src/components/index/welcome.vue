@@ -5,7 +5,7 @@
             <span class="middle"></span>
             <span class="bottom"></span>
         </div>
-        <img :class="{welcome:true,show:shows[1]}" alt="" src="/src/images/welcome.png"
+        <img :class="{welcome:true,show:shows[1]}" alt="" src="https://nnfx.glut.edu.cn/jsj/mobile/welcome.png"
              @load="start()">
     </div>
 </template>

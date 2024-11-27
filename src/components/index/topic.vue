@@ -19,6 +19,8 @@
     </div>
 </template>
 <script setup>
+import {useRouter} from "vue-router";
+
 const list = {
     images: [
         "https://nnfx.glut.edu.cn/jsj/img/202203240943424.jpg",
@@ -26,10 +28,18 @@ const list = {
         "https://nnfx.glut.edu.cn/jsj/img/202203240945070.jpg",
         "https://nnfx.glut.edu.cn/jsj/img/2015060515183976.png"
     ],
-    urls: ["http://jy.glutnn.cn", "http://dangshi.people.com.cn", "https://720yun.com/t/01fjO7kmza6?from=singlemessage&pano_id=3635792"],
+    urls: ["http://jy.glutnn.cn", "/list/majors", "https://zsw.glutnn.cn/", "https://720yun.com/t/01fjO7kmza6?from=singlemessage&pano_id=3635792"],
     titles: ["就业信息", "专业介绍", "招生网", "校园全景VR"]
 }
-const to = url => window.location.href = url
+const router = useRouter()
+
+function to(url) {
+    if (url.startsWith("http")) {
+        location.href = url;
+    } else {
+        router.push(url)
+    }
+}
 </script>
 <script>
 export default {

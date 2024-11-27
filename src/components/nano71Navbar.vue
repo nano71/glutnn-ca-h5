@@ -140,9 +140,9 @@ export default {
     <div id="topBar" :class="{show}" :style="`z-index: ${zIndex};`">
         <div :class="{top:true,searchMode,topMode:$store.state.navbar.topMode}">
             <div class="logo" @click="$router.push('/')">
-                <img class="lineMode" src="../images/logo-line.png" alt="">
-                <img class="blackMode" src="../images/logo-black.png" alt="">
-                <img class="whiteMode" src="../images/logo-white.png" alt="">
+                <img alt="" class="lineMode" src="https://nnfx.glut.edu.cn/jsj/mobile/logo-line.png">
+                <img alt="" class="blackMode" src="https://nnfx.glut.edu.cn/jsj/mobile/logo-black.png">
+                <img alt="" class="whiteMode" src="https://nnfx.glut.edu.cn/jsj/mobile/logo-white.png">
             </div>
             <div class="menu">
                 <ri-search-line class="icon" @click="show||(searchMode=true)&&(show=!show)"/>
